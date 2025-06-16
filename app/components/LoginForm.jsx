@@ -17,14 +17,13 @@ const LoginForm = () => {
       const res = await signIn("credentials", {
         email,
         password,
-        redirect: false,
+        callbackUrl: "/profile",
       });
       if (res.error) {
         setError("Invalid Credentials");
         setTimeout(() => setError(""), 3000);
         return;
       }
-      router.replace("/profile");
     } catch (error) {
       console.log(error);
     }
