@@ -1,4 +1,4 @@
-A Twitter‑style feed and social app built with Next.js, React, NextAuth, Mongoose, MongoDB and Tailwind CSS—developed as part of ReDI School’s Fullstack Development Bootcamp curriculum.
+A Twitter‑style feed and social app built with Next.JS, NextAuth, MongoDB and Tailwind CSS—developed as part of ReDI School’s Fullstack Development Bootcamp curriculum.
 
 Live Demo: https://anothertwitter.vercel.app/
 
@@ -18,8 +18,8 @@ Live Demo: https://anothertwitter.vercel.app/
 | Framework      | Next.js 14 (App Router)     |
 | Styling        | Tailwind CSS                |
 | Authentication | NextAuth.js                 |
-| ORM / Database | Prisma (SQLite or Postgres) |
-| Language       | TypeScript / JavaScript     |
+| ORM / Database | Mongoose (MongoDB)          |
+| Language       | JavaScript                  |
 | Deployment     | Vercel                      |
 
 ## 📦 Installation
@@ -43,7 +43,7 @@ Live Demo: https://anothertwitter.vercel.app/
    Create a `.env.local` file at the project root and add:
 
    ```env
-   DATABASE_URL="file:./dev.db"         # or your Postgres URL
+   MONGODB_URI="mongodb+srv://..."
    NEXTAUTH_SECRET="a-long-random-string"
    NEXTAUTH_URL="http://localhost:3000"
    ```
@@ -55,10 +55,10 @@ Live Demo: https://anothertwitter.vercel.app/
    GITHUB_SECRET="…"
    ```
 
-4. **Run Prisma migrations** (if using SQLite/Postgres):
+4. **Run mongoose migrations** (if you're using MongoDB):
 
    ```bash
-   npx prisma migrate dev --name init
+   npm install mongoose
    ```
 
 5. **Start the dev server**:
@@ -67,32 +67,6 @@ Live Demo: https://anothertwitter.vercel.app/
    npm run dev
    # then open http://localhost:3000 in your browser
    ```
-
-## 🗂️ Project Structure
-
-```
-/app
-  ├─ layout.tsx       # Root layout & global styles
-  ├─ page.tsx         # Home / feed page
-  ├─ profile/
-  │   └─ page.tsx     # User profile page
-  └─ api/
-      ├─ auth/[...nextauth].ts   # NextAuth config
-      └─ tweets/…                # Tweet CRUD API routes
-
-/lib
-  └─ prisma.ts         # Prisma client instance
-
-/models
-  └─ tweet.ts          # TypeScript interfaces / Zod schemas
-
-/public
-  └─ images/           # Static assets
-
-/middleware.js         # Route protection
-
-/next.config.js        # Next.js config
-```
 
 ## 🧪 Scripts
 
@@ -123,12 +97,6 @@ Contributions, issues and feature requests are welcome!
 4. Push to the branch (`git push origin feature/fooBar`)
 5. Open a Pull Request
 
-Please read [CONTRIBUTING.md](./CONTRIBUTING.md) (if you add one) for details on our code of conduct and the process for submitting pull requests.
-
 ## 📄 License
 
 Distributed under the MIT License. See [LICENSE](./LICENSE) for more info.
-
----
-
-*Built with ❤️ for ReDI School*
