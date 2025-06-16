@@ -1,36 +1,134 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+A Twitter‑style feed and social app built with Next.js, React, NextAuth, Mongoose, MongoDB and Tailwind CSS—developed as part of ReDI School’s Fullstack Development Bootcamp curriculum.
 
-## Getting Started
+Live Demo: https://anothertwitter.vercel.app/
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+* **User Authentication** via NextAuth (email/password credentials)
+* **Create, Read & List Tweets**
+* **User Profiles** with their own tweet feeds
+* **Responsive UI** using Tailwind CSS
+* **Server‑side API routes** in Next.js
+* **Database ORM** powered by Prisma
+
+## 🛠️ Tech Stack
+
+| Layer          | Technology                  |
+| -------------- | --------------------------- |
+| Framework      | Next.js 14 (App Router)     |
+| Styling        | Tailwind CSS                |
+| Authentication | NextAuth.js                 |
+| ORM / Database | Prisma (SQLite or Postgres) |
+| Language       | TypeScript / JavaScript     |
+| Deployment     | Vercel                      |
+
+## 📦 Installation
+
+1. **Fork & clone** this repo:
+
+   ```bash
+   git clone https://github.com/priyoarman/anothertwitter.git
+   cd anothertwitter
+   ```
+
+2. **Install dependencies**:
+
+   ```bash
+   npm install
+   # or yarn install
+   # or pnpm install
+   ```
+
+3. **Environment variables**
+   Create a `.env.local` file at the project root and add:
+
+   ```env
+   DATABASE_URL="file:./dev.db"         # or your Postgres URL
+   NEXTAUTH_SECRET="a-long-random-string"
+   NEXTAUTH_URL="http://localhost:3000"
+   ```
+
+   If you use OAuth providers (e.g. GitHub, Google), also add:
+
+   ```env
+   GITHUB_ID="…"
+   GITHUB_SECRET="…"
+   ```
+
+4. **Run Prisma migrations** (if using SQLite/Postgres):
+
+   ```bash
+   npx prisma migrate dev --name init
+   ```
+
+5. **Start the dev server**:
+
+   ```bash
+   npm run dev
+   # then open http://localhost:3000 in your browser
+   ```
+
+## 🗂️ Project Structure
+
+```
+/app
+  ├─ layout.tsx       # Root layout & global styles
+  ├─ page.tsx         # Home / feed page
+  ├─ profile/
+  │   └─ page.tsx     # User profile page
+  └─ api/
+      ├─ auth/[...nextauth].ts   # NextAuth config
+      └─ tweets/…                # Tweet CRUD API routes
+
+/lib
+  └─ prisma.ts         # Prisma client instance
+
+/models
+  └─ tweet.ts          # TypeScript interfaces / Zod schemas
+
+/public
+  └─ images/           # Static assets
+
+/middleware.js         # Route protection
+
+/next.config.js        # Next.js config
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🧪 Scripts
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+| Command          | Description                 |
+| ---------------- | --------------------------- |
+| `npm run dev`    | Run in development mode     |
+| `npm run build`  | Build for production        |
+| `npm run start`  | Start the production server |
+| `npm run lint`   | Run ESLint                  |
+| `npm run format` | Run Prettier                |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📈 Deploy
 
-## Learn More
+This app deploys seamlessly to **Vercel**:
 
-To learn more about Next.js, take a look at the following resources:
+1. Push your code to GitHub.
+2. Import the repo in Vercel.
+3. Add the same environment variables in Vercel’s dashboard.
+4. Deploy!
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🤝 Contributing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Contributions, issues and feature requests are welcome!
 
-## Deploy on Vercel
+1. Fork the repo
+2. Create your feature branch (`git checkout -b feature/fooBar`)
+3. Commit your changes (`git commit -am 'Add some fooBar'`)
+4. Push to the branch (`git push origin feature/fooBar`)
+5. Open a Pull Request
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Please read [CONTRIBUTING.md](./CONTRIBUTING.md) (if you add one) for details on our code of conduct and the process for submitting pull requests.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📄 License
+
+Distributed under the MIT License. See [LICENSE](./LICENSE) for more info.
+
+---
+
+*Built with ❤️ for ReDI School*
