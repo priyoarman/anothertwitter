@@ -1,8 +1,8 @@
 import EditPostPage from "@/app/components/EditPostPage";
-
+export const dynamic = "force-dynamic";
 const getPostById = async (id) => {
   try {
-    const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
+    const res = await fetch(`/api/posts/${id}`, {
       cache: "no-store",
     });
 

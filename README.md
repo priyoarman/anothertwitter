@@ -1,36 +1,102 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+A Twitter‑style feed and social app built with Next.JS, NextAuth, MongoDB and Tailwind CSS—developed as part of ReDI School’s Fullstack Development Bootcamp curriculum.
 
-## Getting Started
+Live Demo: https://anothertwitter.vercel.app/
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+* **User Authentication** via NextAuth (email/password credentials)
+* **Create, Read & List Tweets**
+* **User Profiles** with their own tweet feeds
+* **Responsive UI** using Tailwind CSS
+* **Server‑side API routes** in Next.js
+* **Database ORM** powered by Prisma
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Tech Stack
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+| Layer          | Technology                  |
+| -------------- | --------------------------- |
+| Framework      | Next.js 14 (App Router)     |
+| Styling        | Tailwind CSS                |
+| Authentication | NextAuth.js                 |
+| ORM / Database | Mongoose (MongoDB)          |
+| Language       | JavaScript                  |
+| Deployment     | Vercel                      |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📦 Installation
 
-## Learn More
+1. **Fork & clone** this repo:
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   git clone https://github.com/priyoarman/anothertwitter.git
+   cd anothertwitter
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. **Install dependencies**:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   ```bash
+   npm install
+   # or yarn install
+   # or pnpm install
+   ```
 
-## Deploy on Vercel
+3. **Environment variables**
+   Create a `.env.local` file at the project root and add:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```env
+   MONGODB_URI="mongodb+srv://..."
+   NEXTAUTH_SECRET="a-long-random-string"
+   NEXTAUTH_URL="http://localhost:3000"
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   If you use OAuth providers (e.g. GitHub, Google), also add:
+
+   ```env
+   GITHUB_ID="…"
+   GITHUB_SECRET="…"
+   ```
+
+4. **Run mongoose migrations** (if you're using MongoDB):
+
+   ```bash
+   npm install mongoose
+   ```
+
+5. **Start the dev server**:
+
+   ```bash
+   npm run dev
+   # then open http://localhost:3000 in your browser
+   ```
+
+## 🧪 Scripts
+
+| Command          | Description                 |
+| ---------------- | --------------------------- |
+| `npm run dev`    | Run in development mode     |
+| `npm run build`  | Build for production        |
+| `npm run start`  | Start the production server |
+| `npm run lint`   | Run ESLint                  |
+| `npm run format` | Run Prettier                |
+
+## 📈 Deploy
+
+This app deploys seamlessly to **Vercel**:
+
+1. Push your code to GitHub.
+2. Import the repo in Vercel.
+3. Add the same environment variables in Vercel’s dashboard.
+4. Deploy!
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+1. Fork the repo
+2. Create your feature branch (`git checkout -b feature/fooBar`)
+3. Commit your changes (`git commit -am 'Add some fooBar'`)
+4. Push to the branch (`git push origin feature/fooBar`)
+5. Open a Pull Request
+
+## 📄 License
+
+Distributed under the MIT License. See [LICENSE](./LICENSE) for more info.
