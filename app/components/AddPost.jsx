@@ -16,7 +16,7 @@ export default function AddPost() {
   if (status === "loading") return null;
   if (!session) {
     return (
-      <p className="flex justify-center items-center text-center gap-1.5 text-gray-200 my-2 mx-2 mb-8 px-4 py-4 h-34">
+      <p className="flex justify-center items-center text-center gap-1.5 text-gray-700 font-semibold my-2 mx-2 mb-8 px-4 py-4 h-34">
         Please{" "}
         <a href="/login" className="text-blue-400">
           log in

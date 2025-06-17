@@ -15,48 +15,49 @@ const LoginForm = () => {
     e.preventDefault();
     try {
       const res = await signIn("credentials", {
+        redirect: false,
         email,
         password,
-        callbackUrl: "/profile",
       });
-      if (res.error) {
+      if (res?.error) {
         setError("Invalid Credentials");
         setTimeout(() => setError(""), 3000);
         return;
       }
+      router.push("/profile");
     } catch (error) {
       console.log(error);
     }
   };
 
   return (
-    <div className="grid place-items-center h-screen container min-w-xl mx-auto px-6 py-6">
+    <div className="sticky w-1/2 border-r-1 border-gray-200 grid place-items-center h-screen container min-w-xl mx-auto px-6 py-6">
       <div className="shadow-md place-items-center shadow-blue-400 p-5 rounded-lg">
-        <h1 className="text-2xl text-white font-semibold">Login</h1>
+        <h1 className="text-2xl text-gray-700 font-semibold">Login</h1>
         <form
           onSubmit={handleSubmit}
           className="flex flex-col gap-4 mt-4 justify-center items-center"
         >
           <input
-            className="w-[400px] bg-cyan-50 rounded-xl text-gray-900 text-[16px] placeholder-gray-500 py-2 px-6"
+            className="w-[400px] bg-gray-50 rounded-xl text-gray-900 text-[16px] placeholder-gray-500 border-1 border-gray-200 py-2 px-6"
             onChange={(e) => setEmail(e.target.value)}
             type="text"
             placeholder="Email"
           />
           <input
-            className="w-[400px] bg-cyan-50 rounded-xl text-gray-900 text-[16px] placeholder-gray-500 py-2 px-6"
+            className="w-[400px] bg-gray-50 rounded-xl text-gray-900 text-[16px] placeholder-gray-500 border-1 border-gray-200 py-2 px-6"
             onChange={(e) => setPassword(e.target.value)}
             type="password"
             placeholder="Password"
           />
           <div className="flex flex-row w-full justify-between">
-            <button className="bg-blue-400 w-1/4 text-white text-sm rounded-xl px-4 h-8 hover:bg-blue-300">
+            <button className="bg-blue-400 w-1/4 text-white text-sm rounded-xl px-4 h-8 hover:bg-blue-300 cursor-pointer">
               Login
             </button>
             <Link href="/register">
-              <div className="flex flex-col text-white text-sm text-right">
+              <div className="flex flex-row gap-1 mt-2 text-gray-700 text-sm text-right">
                 Don't have an account?{" "}
-                <span className="text-blue-400 hover:text-blue-300 hover:underline">
+                <span className="text-emerald-600 hover:text-emerald-500 hover:underline">
                   Register!
                 </span>
               </div>
