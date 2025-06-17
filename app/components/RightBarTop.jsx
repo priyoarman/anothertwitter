@@ -11,12 +11,12 @@ export default function News() {
       .then((data) => setNews(data.articles));
   }, []);
   return (
-    <div className='flex flex-col text-gray-700 space-y-3 bg-blue-200 rounded-xl pt-2'>
+    <div className='flex flex-col text-gray-800 space-y-3 bg-gray-50 border border-gray-200 rounded-xl pt-2'>
       <h4 className='font-bold text-xl px-4 pt-2'>Whats happening</h4>
       {news.slice(0, articleNum).map((article) => (
         <div key={article.url}>
           <a href={article.url} target='_blank'>
-            <div className='flex items-center justify-between px-4 py-2 space-x-1 hover:bg-blue-100 transition duration-200'>
+            <div className='flex items-center justify-between px-4 py-2 space-x-1 hover:bg-blue-50 transition duration-200'>
               <div className='space-y-0.5'>
                 <h6 className='text-sm font-bold'>{article.title}</h6>
                 <p className='text-xs font-medium text-gray-500'>

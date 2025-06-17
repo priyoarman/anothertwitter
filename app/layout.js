@@ -11,9 +11,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-gray-950">
+      <body className="bg-gray-50">
         <AuthProvider>
-          <div className="flex flex-row text-xl space-x-4">
+          <div className="flex flex-row text-xl">
             <LeftBar />
             {children}
             <RightBar/>

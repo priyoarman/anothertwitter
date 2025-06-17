@@ -3,6 +3,10 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
+import { PiImageSquareBold } from "react-icons/pi";
+import { MdOutlineGifBox } from "react-icons/md";
+import { HiMiniListBullet } from "react-icons/hi2";
+
 
 export default function AddPost() {
   const { data: session, status } = useSession();
@@ -48,18 +52,39 @@ export default function AddPost() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col justify-around my-2 mx-2 mb-6"
+      className="flex flex-col justify-around border-b-1 border-gray-200 mb-6"
     >
       <textarea
         value={body}
         onChange={(e) => setBody(e.target.value)}
-        className="rounded-2xl bg-cyan-50 outline-blue-400 h-24 px-4 py-4 mb-2 resize-none"
+        className="bg-gray-50 outline-0 border-b-1 border-gray-200 h-24 px-4 py-4 resize-none placeholder:font-medium"
         placeholder="What's on your mind?"
       />
-      <div className="flex justify-end gap-2">
+      <div className="flex flex-row justify-between items-center bg-gray-50 gap-2">
+        <div className="flex flex-row">
+          <div className="pl-6 text-2xl text-blue-400">
+          <input type="file" name="" id="imageUpload" hidden />
+          <label htmlFor="imageUpload">
+            <PiImageSquareBold className="hover:text-gray-500 cursor-pointer" />
+          </label>
+        </div>
+        <div className="pl-6 text-2xl text-blue-400">
+          <input type="file" name="" id="imageUpload" hidden />
+          <label htmlFor="imageUpload">
+            <MdOutlineGifBox className="hover:text-gray-500 cursor-pointer" />
+          </label>
+        </div>
+        <div className="pl-6 text-2xl text-blue-400">
+          <input type="file" name="" id="imageUpload" hidden />
+          <label htmlFor="imageUpload">
+            <HiMiniListBullet className="hover:text-gray-500 cursor-pointer" />
+          </label>
+        </div>
+        </div>
+        
         <button
           type="submit"
-          className="bg-blue-400 text-white text-sm rounded-xl px-4 h-10 hover:bg-blue-300"
+          className="bg-gray-500 text-white text-sm font-bold rounded-3xl px-4 mx-2 my-2 h-10 hover:bg-blue-400 cursor-pointer"
         >
           Post
         </button>
