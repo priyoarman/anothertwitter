@@ -17,21 +17,21 @@ const LeftBar = () => {
           className="hover:bg-gray-200 text-2xl text-blue-400 sm:text-lg md:text-2xl text-shadow-gray-700 text-shadow-xs font-semibold transition duration-200 flex items-center justify-start w-fit space-x-2 rounded-3xl py-2 sm:px-4 px-2 pl-4"
         >
           <BsTwitter />
-          {/* <p className="hidden sm:block">Twitter</p> */}
+          {/* <p className="hidden md:block">Twitter</p> */}
         </Link>
         <Link
           href={"/"}
           className="hover:bg-gray-200 text-2xl text-gray-800 sm:text-lg md:text-xl text-blue-40 font-bold transition duration-200 flex items-center justify-start w-fit space-x-2 rounded-3xl py-2 sm:px-4 px-2 pl-4"
         >
           <BiHomeCircle />
-          <p className="hidden sm:block">Home</p>
+          <p className="hidden md:block">Home</p>
         </Link>
         <Link
           href={"/"}
           className="hover:bg-gray-200 text-2xl text-gray-800 sm:text-lg md:text-xl text-blue-40 font-bold transition duration-200 flex items-center justify-start w-fit space-x-2 rounded-3xl py-2 sm:px-4 px-2 pl-4"
         >
           <CgHashtag />
-          <p className="hidden sm:block">Explore</p>
+          <p className="hidden md:block">Explore</p>
         </Link>{" "}
         <Link
           href={"/"}
@@ -39,7 +39,7 @@ const LeftBar = () => {
         >
           <IoMdNotificationsOutline />
 
-          <p className="hidden sm:block">Notifications</p>
+          <p className="hidden md:block">Notifications</p>
         </Link>
         <Link
           href={"/"}
@@ -47,7 +47,7 @@ const LeftBar = () => {
         >
           <HiOutlineEnvelope />
 
-          <p className="hidden sm:block">Messages</p>
+          <p className="hidden md:block">Messages</p>
         </Link>
         <Link
           href={"/profile"}
@@ -55,15 +55,15 @@ const LeftBar = () => {
         >
           <IoPersonOutline />
 
-          <p className="hidden sm:block">Profile</p>
+          <p className="hidden md:block">Profile</p>
         </Link>
       </div>
 
       <div className="flex flex-row gap-2 w-full justify-between hover:bg-gray-200 cursor-pointer rounded-full py-2 px-2">
         <div className="flex flex-row gap-2">
-          <div className="w-10 h-10 bg-neutral-600 rounded-full flex-none"></div>
+          <div className="flex flex-row w-10 h-10 bg-neutral-600 rounded-full"></div>
 
-          <div className="flex flex-col">
+          <div className="flex-col hidden md:block">
             <div className="text-[16px] text-gray-800 font-bold">
             Chandler Bing
           </div>

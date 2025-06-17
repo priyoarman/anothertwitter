@@ -42,7 +42,7 @@ export default function PostCard({ post }) {
 
       {/* POST CONTENT */}
       <div>
-        <p className="text-neutral-500 mt-2 cursor-pointer">{post.body}</p>
+        <p className="text-neutral-600 my-4 cursor-pointer">{post.body}</p>
       </div>
 
       {/* POST INTERACTIVITY */}
