@@ -41,7 +41,7 @@ const ProfilePage = ({ posts }) => {
 
         <div className="flex felx-row gap-4 w-fit text-[16px]">
           <div className="flex flex-row gap-2">
-            <p className="flex flex-row pt-1 text-gray-600"><FaLink/></p>
+            <p className="flex flex-row pt-1 text-gray-500"><FaLink/></p>
             <a className="text-blue-400 hover:underline cursor-pointer">instagram.com/gastonedul</a>
           </div>
           <div className="flex flex-row gap-2">
