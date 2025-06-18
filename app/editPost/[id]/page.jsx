@@ -16,9 +16,9 @@ const getPostById = async (id) => {
   }
 };
 
-export default async function EditPost ({ params }) {
+export default async function EditPost({ params }) {
   const { id } = await params;
   const { post } = await getPostById(id);
   const { body } = post;
   return <EditPostPage id={id} body={body} />;
-};
+}

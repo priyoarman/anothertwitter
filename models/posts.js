@@ -9,19 +9,19 @@ const postsSchema = new Schema(
     image: {
       type: String,
     },
-    user: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'User',
-      required: true,
-    },
-    username: {
-      type: String,
-      required: true,
-    },
-    profileImg: {
-      type: String,
-      required: true,
-    },
+    // user: {
+    //   type: mongoose.Schema.Types.ObjectId,
+    //   ref: 'User',
+    //   required: true,
+    // },
+    // username: {
+    //   type: String,
+    //   required: true,
+    // },
+    // profileImg: {
+    //   type: String,
+    //   required: true,
+    // },
     authorId: {
       type: String,
       required: true,
@@ -33,23 +33,23 @@ const postsSchema = new Schema(
     authorEmail: {
       type: String,
     },
-    likes: {
-      type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
-      default: [],
-    },
-    comments: {
-      type: [
-        {
-          comment: String,
-          user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
-          name: String,
-          username: String,
-          profileImg: String,
-          createdAt: { type: Date, default: Date.now },
-        },
-      ],
-      default: [],
-    },
+    // likes: {
+    //   type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
+    //   default: [],
+    // },
+    // comments: {
+    //   type: [
+    //     {
+    //       comment: String,
+    //       user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+    //       name: String,
+    //       username: String,
+    //       profileImg: String,
+    //       createdAt: { type: Date, default: Date.now },
+    //     },
+    //   ],
+    //   default: [],
+    // },
   },
   {
     timestamps: true,
