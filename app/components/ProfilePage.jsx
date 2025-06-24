@@ -10,7 +10,7 @@ const ProfilePage = ({ posts }) => {
   const { data: session } = useSession();
 
   return (
-    <div className="sticky w-1/2 flex flex-col container border-r-1 border-gray-200">
+    <div className="sticky sm:w-2/4 flex flex-col container border-r-1 border-gray-200">
       <div className="w-full">
         <div className="flex flex-row w-full h-42 justify-center items-center bg-gray-500 text-2xl text-white">
           <img src="https://assets.vogue.com/photos/654287d1eee216fe1a678cb2/master/w_2240,c_limit/GettyImages-138363012.jpg" alt="ChandlerPhoto" className="h-[100%] w-[100%] object-cover " />
@@ -36,7 +36,7 @@ const ProfilePage = ({ posts }) => {
         </div>
 
         <div className="flex felx-row w-fit text-[16px] text-gray-800">
-          Here goes my short bio for Another Twitter
+          Here goes my short bio for Y
         </div>
 
         <div className="flex felx-row gap-4 w-fit text-[16px]">

@@ -14,7 +14,7 @@ export default function PostCard({ post }) {
   const isOwner = session?.user?.id === post.authorId;
 
   return (
-    <div className="flex flex-row gap-2 sm:gap-0 w-full border-slate-300 shadow-md hover:shadow-lg transition-all bg-gray-50 hover:bg-blue-50">
+    <div className="flex flex-row gap-2 sm:gap-0 w-full border-slate-300 shadow-md hover:shadow-lg transition-all bg-gray-50 hover:bg-blue-50 z-20">
 
       <div className="flex flex-col justify-items-start items-start w-1/12 px-4 py-4">
       <div className="flex w-10 h-10 bg-neutral-600 rounded-full"></div>

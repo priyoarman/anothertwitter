@@ -4,7 +4,7 @@ import "./globals.css";
 import { AuthProvider } from "./Providers";
 
 export const metadata = {
-  title: "Y - Twitter Clone",
+  title: "Y",
   description: "Created by Arman Hossain",
 };
 

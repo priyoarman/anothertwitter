@@ -17,7 +17,7 @@ export default async function PostsList() {
   }));
 
   return (
-    <div>
+    <div className="z-20 pt-6 bg-gray-50">
       {posts.map((post) => (
         <PostCard key={post._id} post={post} />
       ))}

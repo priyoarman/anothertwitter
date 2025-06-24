@@ -52,7 +52,7 @@ export default function AddPost() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col justify-around border-b-1 border-gray-200 mb-6"
+      className="flex flex-col justify-around border-b-1 border-gray-200 z-20"
     >
       <textarea
         value={body}

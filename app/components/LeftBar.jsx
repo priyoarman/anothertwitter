@@ -11,8 +11,8 @@ import { BsThreeDots } from "react-icons/bs";
 
 const LeftBar = () => {
   return (
-    <div className="sticky top-0 xl:flex flex-col w-14 sm:w-1/4 items-stretch h-screen bg-gray-50 border-r-1 border-gray-200 justify-center py-3 sm:px-12">
-      <div className="flex flex-col text-black items-stretch h-full space-y-2">
+    <div className="sticky top-0 lg:flex flex-col w-14 md:w-1/4 items-stretch h-screen bg-gray-50 border-r-1 border-gray-200 justify-center py-3 sm:px-12">
+      <div className="flex flex-col text-black items-center md:items-stretch h-full space-y-2 z-0">
         <Link
           href={"/"}
           className="hover:bg-gray-200 text-[28px] text-blue-400 text-blue-40 font-bold transition duration-200 flex items-center justify-start w-full sm:w-fit space-x-2 rounded-3xl py-2 sm:px-4 px-2 pl-4"
@@ -22,41 +22,41 @@ const LeftBar = () => {
         </Link>
         <Link
           href={"/"}
-          className="hover:bg-gray-200 text-2xl sm:text-xl text-gray-800 text-blue-40 font-bold transition duration-200 flex items-center justify-start w-full sm:w-fit space-x-2 rounded-3xl py-2 sm:px-4 px-2 pl-4"
+          className="hover:bg-gray-200 text-2xl md:text-xl text-gray-800 text-blue-40 font-bold transition duration-200 flex items-center justify-start w-full sm:w-fit space-x-2 rounded-3xl py-2 sm:px-4 px-2 pl-4"
         >
           <BiHomeCircle />
-          <p className="hidden sm:block">Home</p>
+          <p className="hidden md:block">Home</p>
         </Link>
         <Link
           href={"/"}
-          className="hover:bg-gray-200 text-2xl sm:text-xl text-gray-800 text-blue-40 font-bold transition duration-200 flex items-center justify-start w-full sm:w-fit space-x-2 rounded-3xl py-2 sm:px-4 px-2 pl-4"
+          className="hover:bg-gray-200 text-2xl md:text-xl text-gray-800 text-blue-40 font-bold transition duration-200 flex items-center justify-start w-full sm:w-fit space-x-2 rounded-3xl py-2 sm:px-4 px-2 pl-4"
         >
           <CgHashtag />
-          <p className="hidden sm:block">Explore</p>
+          <p className="hidden md:block">Explore</p>
         </Link>{" "}
         <Link
           href={"/"}
-          className="hover:bg-gray-200 text-2xl sm:text-xl text-gray-800 text-blue-40 font-bold transition duration-200 flex items-center justify-start w-full sm:w-fit space-x-2 rounded-3xl py-2 sm:px-4 px-2 pl-4"
+          className="hover:bg-gray-200 text-2xl md:text-xl text-gray-800 text-blue-40 font-bold transition duration-200 flex items-center justify-start w-full sm:w-fit space-x-2 rounded-3xl py-2 sm:px-4 px-2 pl-4"
         >
           <IoMdNotificationsOutline />
 
-          <p className="hidden sm:block">Notifications</p>
+          <p className="hidden md:block">Notifications</p>
         </Link>
         <Link
           href={"/"}
-          className="hover:bg-gray-200 text-2xl sm:text-xl text-gray-800 text-blue-40 font-bold transition duration-200 flex items-center justify-start w-full sm:w-fit space-x-2 rounded-3xl py-2 sm:px-4 px-2 pl-4"
+          className="hover:bg-gray-200 text-2xl md:text-xl text-gray-800 text-blue-40 font-bold transition duration-200 flex items-center justify-start w-full sm:w-fit space-x-2 rounded-3xl py-2 sm:px-4 px-2 pl-4"
         >
           <HiOutlineEnvelope />
 
-          <p className="hidden sm:block">Messages</p>
+          <p className="hidden md:block">Messages</p>
         </Link>
         <Link
           href={"/profile"}
-          className="hover:bg-gray-200 text-2xl sm:text-xl text-gray-800 text-blue-40 font-bold transition duration-200 flex items-center justify-start w-full sm:w-fit space-x-2 rounded-3xl py-2 sm:px-4 px-2 pl-4"
+          className="hover:bg-gray-200 text-2xl md:text-xl text-gray-800 text-blue-40 font-bold transition duration-200 flex items-center justify-start w-full sm:w-fit space-x-2 rounded-3xl py-2 sm:px-4 px-2 pl-4"
         >
           <IoPersonOutline />
 
-          <p className="hidden sm:block">Profile</p>
+          <p className="hidden md:block">Profile</p>
         </Link>
       </div>
 
