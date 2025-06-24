@@ -18,7 +18,7 @@ const RightBar = () => {
     }, 100);
   };
   return (
-    <div className="w-1/4 sticky hidden overflow-y-auto lg:flex flex-col items-stretch overflow-x-hidden px-2 py-2 gap-3">
+    <div className="sm:w-1/4 sticky hidden overflow-y-auto lg:flex flex-col items-stretch overflow-x-hidden px-2 py-2 gap-3">
       <form onSubmit={handleSubmit} className="relative w-full h-fit group">
         <input
           id="searchBox"

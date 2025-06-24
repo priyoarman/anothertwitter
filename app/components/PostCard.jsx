@@ -14,24 +14,27 @@ export default function PostCard({ post }) {
   const isOwner = session?.user?.id === post.authorId;
 
   return (
-    <div className="flex flex-row w-full border-slate-300 shadow-md hover:shadow-lg transition-all bg-gray-50 hover:bg-blue-50">
+    <div className="flex flex-row gap-2 sm:gap-0 w-full border-slate-300 shadow-md hover:shadow-lg transition-all bg-gray-50 hover:bg-blue-50">
 
       <div className="flex flex-col justify-items-start items-start w-1/12 px-4 py-4">
       <div className="flex w-10 h-10 bg-neutral-600 rounded-full"></div>
       </div>
 
-      <div className="flex flex-col w-11/12 p-4 gap-2">
+      <div className="flex flex-col w-11/12 p-4 gap-4 sm:gap-2">
 
         {/* POST AUTHOR */}
         <div className="flex flex-row p-0 h-8 justify-between">
-          <div className="flex flex-row gap-2">
-            <h2 className="text-lg font-bold text-neutral-700 hover:underline cursor-pointer">
+          <div className="flex flex-row gap-2 w-full justify-between pr-2">
+            <div className="flex flex-col sm:flex-row sm:gap-2">
+              <h2 className="text-[16px] sm:text-lg font-bold text-neutral-700 hover:underline cursor-pointer">
               {post.authorName}
             </h2>
-            <h3 className="text-lg font-bold text-neutral-500 cursor-pointer">
+            <h3 className="text-[16px] sm:text-lg font-bold text-neutral-500 cursor-pointer">
               {post.authorEmail}
             </h3>
-            <h4 className="text-lg text-neutral-400 cursor-pointer">
+            </div>
+            
+            <h4 className="text-[16px] sm:text-lg mt-1 sm:mt-0.5 text-neutral-400 cursor-pointer">
               Jul 36
             </h4>
           </div>
