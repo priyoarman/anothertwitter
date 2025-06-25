@@ -6,7 +6,9 @@ import { NextResponse } from "next/server";
 
 export async function GET(request, { params }) {
   await connectMongoDB();
-  const post = await Post.findById(params.id).lean();
+  const { id } = await params;
+  const post = await Post.findById(id).lean();
+
   if (!post) {
     return NextResponse.json({ error: "Post not found" }, { status: 404 });
   }
@@ -17,12 +19,17 @@ export async function GET(request, { params }) {
 export async function PUT(request, { params }) {
   await connectMongoDB();
   const session = await getServerSession(authOptions);
+
   if (!session)
     return NextResponse.json({ error: "Not signed in" }, { status: 401 });
 
   const { newBody } = await request.json();
-  const post = await Post.findById(params.id);
-  if (!post) return NextResponse.json({ error: "Not found" }, { status: 404 });
+  const { id } = await params;
+  const post = await Post.findById(id);
+
+  if (!post) 
+    return NextResponse.json({ error: "Not found" }, { status: 404 });
+
   if (post.authorId !== session.user.id)
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
 
@@ -33,15 +40,7 @@ export async function PUT(request, { params }) {
 
 export async function DELETE(request, { params }) {
   await connectMongoDB();
-  const session = await getServerSession(authOptions);
-  if (!session)
-    return NextResponse.json({ error: "Not signed in" }, { status: 401 });
-
-  const post = await Post.findById(params.id);
-  if (!post) return NextResponse.json({ error: "Not found" }, { status: 404 });
-  if (post.authorId !== session.user.id)
-    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
-
-  await post.remove();
+  const { id } = await params;
+  await Post.findByIdAndDelete(id);
   return NextResponse.json({ message: "Post Deleted" }, { status: 200 });
 }

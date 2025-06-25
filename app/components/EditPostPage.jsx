@@ -24,7 +24,7 @@ const EditPostPage = ({ id, body }) => {
   };
 
   return (
-      <div className="sticky w-1/2 flex flex-col container border-r-1 border-gray-200 min-w-xl mx-auto py-4">
+      <div className="sticky md:w-2/4 flex flex-col container border-r-1 border-gray-200 py-2 z-10">
         <form
           onSubmit={handleSubmit}
           className="flex flex-col justify-around border-b-1 border-gray-200 mb-6"

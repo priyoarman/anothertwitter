@@ -1,4 +1,5 @@
 import mongoose, { Schema } from "mongoose";
+import User from "./user"
 
 const postsSchema = new Schema(
   {
@@ -9,6 +10,28 @@ const postsSchema = new Schema(
     image: {
       type: String,
     },
+    authorId: {
+      type: String,
+      required: true,
+    },
+    authorName: {
+      type: String,
+      required: true,
+    },
+    authorEmail: {
+      type: String,
+    },
+    likes: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+      },
+    ],
+    // author: {
+    //   type: mongoose.Schema.Types.ObjectId,
+    //   ref: "User",
+    //   required: true,
+    // },
     // user: {
     //   type: mongoose.Schema.Types.ObjectId,
     //   ref: 'User',
@@ -22,17 +45,7 @@ const postsSchema = new Schema(
     //   type: String,
     //   required: true,
     // },
-    authorId: {
-      type: String,
-      required: true,
-    },
-    authorName: {
-      type: String,
-      required: true,
-    },
-    authorEmail: {
-      type: String,
-    },
+    
     // likes: {
     //   type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
     //   default: [],
