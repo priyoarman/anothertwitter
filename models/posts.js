@@ -27,47 +27,17 @@ const postsSchema = new Schema(
         ref: "User",
       },
     ],
-    // author: {
-    //   type: mongoose.Schema.Types.ObjectId,
-    //   ref: "User",
-    //   required: true,
-    // },
-    // user: {
-    //   type: mongoose.Schema.Types.ObjectId,
-    //   ref: 'User',
-    //   required: true,
-    // },
-    // username: {
-    //   type: String,
-    //   required: true,
-    // },
-    // profileImg: {
-    //   type: String,
-    //   required: true,
-    // },
-    
-    // likes: {
-    //   type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
-    //   default: [],
-    // },
-    // comments: {
-    //   type: [
-    //     {
-    //       comment: String,
-    //       user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
-    //       name: String,
-    //       username: String,
-    //       profileImg: String,
-    //       createdAt: { type: Date, default: Date.now },
-    //     },
-    //   ],
-    //   default: [],
-    // },
   },
   {
     timestamps: true,
+    toJSON:   { virtuals: true },
+    toObject: { virtuals: true },
   }
 );
+
+postsSchema.virtual("likesCount").get(function () {
+  return this.likes.length;
+});
 
 const Post = mongoose.models.Post || mongoose.model("Post", postsSchema);
 

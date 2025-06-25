@@ -1,5 +1,3 @@
-import LeftBar from "../components/LeftBar";
-import RightBar from "../components/RightBar";
 import LoginForm from "../components/LoginForm";
 import { getServerSession } from "next-auth";
 import { authOptions } from "../api/auth/[...nextauth]/route";
