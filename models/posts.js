@@ -16,9 +16,9 @@ const postsSchema = new Schema(
       type: String,
       required: true,
     },
-    image: {
+    images: [{
       type: String,
-    },
+    }],
     authorId: {
       type: String,
       required: true,

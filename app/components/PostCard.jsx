@@ -46,7 +46,7 @@ export default function PostCard({ post }) {
       <div className="flex flex-col w-11/12 p-4 gap-4 sm:gap-2">
 
         <div className="flex flex-row p-0 h-8 justify-between">
-          <div className="flex flex-row gap-2 w-full justify-between pr-2 pl-3 sm:pl-0">
+          <div className="flex flex-row gap-2 w-full justify-between px-1 sm:pl-0">
             <div className="flex flex-col sm:flex-row sm:gap-2">
               <h2 className="text-[16px] sm:text-lg font-bold text-neutral-700 hover:underline cursor-pointer">
                 {post.authorName}
@@ -77,7 +77,7 @@ export default function PostCard({ post }) {
         </div>
 
         <div>
-          <p className="text-neutral-600 text-lg my-4 cursor-pointer pl-3 sm:pl-0">
+          <p className="text-neutral-600 text-lg my-4 cursor-pointer px-1 sm:pl-0">
             {post.body}
           </p>
           <div className="text-neutral-600 my-4 cursor-pointer"></div>
