@@ -24,6 +24,7 @@ export default async function PostsList() {
       likedByMe:  session
         ? likesArray.map(String).includes(session.user.id)
         : false,
+      commentsCount: doc.commentsCount ?? (doc.comments?.length ?? 0),
     };
   });
 

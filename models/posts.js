@@ -1,6 +1,15 @@
 import mongoose, { Schema } from "mongoose";
 import User from "./user"
 
+const CommentSchema = new Schema(
+  {
+    user: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
+    email: { type: String, required: true },
+    body: { type: String, required: true },
+  },
+  { timestamps: true }
+);
+
 const postsSchema = new Schema(
   {
     body: {
@@ -27,6 +36,10 @@ const postsSchema = new Schema(
         ref: "User",
       },
     ],
+    comments: {
+      type: [CommentSchema],
+      default: [],
+    },
   },
   {
     timestamps: true,
@@ -37,6 +50,10 @@ const postsSchema = new Schema(
 
 postsSchema.virtual("likesCount").get(function () {
   return this.likes.length;
+});
+
+postsSchema.virtual("commentsCount").get(function () {
+  return this.comments.length;
 });
 
 const Post = mongoose.models.Post || mongoose.model("Post", postsSchema);

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import RemoveBtn from "./RemoveBtn";
@@ -11,8 +11,7 @@ export default function PostCard({ post }) {
   const { data: session } = useSession();
   const isOwner = session?.user?.id === post.authorId;
 
-  const [likesCount, setLikesCount] = useState(
-    post.likesCount || 0);
+  const [likesCount, setLikesCount] = useState(post.likesCount || 0);
   const [liked, setLiked] = useState(post.likedByMe);
 
   const handleLike = async () => {
@@ -45,7 +44,7 @@ export default function PostCard({ post }) {
       </div>
 
       <div className="flex flex-col w-11/12 p-4 gap-4 sm:gap-2">
-        {/* POST AUTHOR */}
+
         <div className="flex flex-row p-0 h-8 justify-between">
           <div className="flex flex-row gap-2 w-full justify-between pr-2">
             <div className="flex flex-col sm:flex-row sm:gap-2">
@@ -58,7 +57,7 @@ export default function PostCard({ post }) {
             </div>
 
             <h4 className="text-[12px] sm:text-[16px] mt-1 sm:mt-0.5 text-neutral-400 cursor-pointer">
-              {new Date(post.createdAt).toLocaleDateString()}
+              {new Date(post.createdAt).toLocaleString()}
             </h4>
           </div>
 
@@ -77,7 +76,6 @@ export default function PostCard({ post }) {
           </div>
         </div>
 
-        {/* POST CONTENT */}
         <div>
           <p className="text-neutral-600 text-lg my-4 cursor-pointer">
             {post.body}
@@ -85,12 +83,11 @@ export default function PostCard({ post }) {
           <div className="text-neutral-600 my-4 cursor-pointer"></div>
         </div>
 
-        {/* POST INTERACTIVITY */}
         <div className="flex flex-row justify-between pt-2 px-2">
+
           <div
             className={`flex flex-row justify-center gap-1.5 cursor-pointer ${liked ? "text-red-600" : "text-gray-500 hover:text-red-600"}`}
-            onClick={handleLike}
-          >
+            onClick={handleLike}>
             {liked ? (
               <AiFillHeart className="text-lg" />
             ) : (
@@ -100,21 +97,19 @@ export default function PostCard({ post }) {
 
           </div>
 
-          <div className="flex flex-row justify-center text-gray-500 hover:text-green-600 gap-1.5 cursor-pointer">
-            <button className="flex flex-row justify-center justify-items-center items-center">
-              <AiOutlineComment className="text-lg font-bold cursor-pointer" />
-            </button>
-            <p className="flex flex-row text-sm font-semi mt-0.5">43</p>
-          </div>
+          <Link className="flex flex-row justify-center text-gray-500 hover:text-blue-500 gap-1.5 cursor-pointer" href={`/posts/${post._id}/comments`}>
+                  <AiOutlineComment className="text-lg font-bold cursor-pointer"/>
+            <p className="flex flex-row text-sm font-semi mt-0.5">{post.commentsCount ?? 0}</p>
+          </Link>
 
-          <div className="flex flex-row justify-center text-gray-500 hover:text-blue-500 gap-1.5 cursor-pointer">
+          <div className="flex flex-row justify-center text-gray-500 hover:text-green-500 gap-1.5 cursor-pointer">
             <button className="flex flex-row justify-center justify-items-center items-center">
               <AiOutlineRetweet className="text-lg font-bold cursor-pointer" />
             </button>
             <p className="flex flex-row text-sm font-semi mt-0.5">3</p>
           </div>
 
-          <div className="flex flex-row justify-center text-gray-500 hover:text-yellow-600 gap-1.5 cursor-pointer">
+          <div className="flex flex-row justify-center text-gray-500 hover:text-yellow-500 gap-1.5 cursor-pointer">
             <button className="flex flex-row justify-center justify-items-center items-center">
               <AiOutlineEye className="text-lg font-bold cursor-pointer" />
             </button>

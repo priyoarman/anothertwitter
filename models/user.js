@@ -6,11 +6,6 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
-    // username: {
-    //   type: String,
-    //   required: true,
-    //   unique: true
-    // },
     email: {
       type: String,
       required: true,
@@ -21,21 +16,13 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
-    // avatar: {
-    //   type: String,
-    //   required: true,
-    // },
-    // followers: {
-    //   type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
-    //   default: [],
-    // },
-    // following: {
-    //   type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
-    //   default: [],
-    // },
+    profileImage: { type: String },
+    coverImage: { type: String },
   },
   {
     timestamps: true,
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true },
   }
 );
 
