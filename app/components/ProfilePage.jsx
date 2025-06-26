@@ -13,11 +13,11 @@ const ProfilePage = ({ posts }) => {
     <div className="sticky sm:w-2/4 flex flex-col container border-r-1 border-gray-200">
       <div className="w-full">
         <div className="flex flex-row w-full h-42 justify-center items-center bg-gray-500 text-2xl text-white">
-          <img src="" alt="UserCoverPhoto" className="h-[100%] w-[100%] object-cover " />
+          <img src="null" alt="UserCoverPhoto" className="h-[100%] w-[100%] object-cover " />
         </div>
         <div className="flex flex-row justify-between h-36 w-full">
           <div className="flex container justify-center items-center h-32 w-32 ml-6 mt-[-64] bg-blue-400 rounded-full border-4 border-gray-50 text-2xl text-white">
-            <img src="" alt="UserProfilePhoto" className="flex flex-col h-[100%] w-[100%] object-cover items-center rounded-full " />
+            <img src="null" alt="UserProfilePhoto" className="flex flex-col h-[100%] w-[100%] object-cover items-center rounded-full " />
           </div>
           <div className="py-2 px-2">
             <button className="rounded-full px-4 py-2 bg-gray-800 text-white font-semibold hover:bg-blue-400 cursor-pointer text-shadow-xs text-sm">
