@@ -42,17 +42,17 @@ const ProfilePage = ({ posts }) => {
         <div className="flex felx-row gap-4 w-fit text-[16px]">
           <div className="flex flex-row gap-2">
             <p className="flex flex-row pt-1 text-gray-500"><FaLink/></p>
-            <a className="text-blue-400 hover:underline cursor-pointer">instagram.com/gastonedul</a>
+            <a href="https://github.com/priyoarman" className="text-blue-400 hover:underline cursor-pointer">github.com/priyoarman</a>
           </div>
-          <div className="flex flex-row gap-2">
+          <div className="sm:flex flex-row gap-2 hidden">
             <p className="flex flex-row pt-1 text-gray-600"><IoCalendarOutline/></p>
             <a className="text-gray-600 cursor-pointer">Joined October 2024</a>
           </div>
         </div>
 
         <div className="flex felx-row w-fit gap-2 text-[16px] text-gray-800 font-medium">
-          <p><span className="font-bold">13</span> Followers</p>
-          <p><span className="font-bold">26</span> Following</p>
+          <p><span className="font-bold">0</span> Followers</p>
+          <p><span className="font-bold">0</span> Following</p>
           
         </div>
 

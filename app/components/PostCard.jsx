@@ -46,7 +46,7 @@ export default function PostCard({ post }) {
       <div className="flex flex-col w-11/12 p-4 gap-4 sm:gap-2">
 
         <div className="flex flex-row p-0 h-8 justify-between">
-          <div className="flex flex-row gap-2 w-full justify-between pr-2">
+          <div className="flex flex-row gap-2 w-full justify-between pr-2 pl-3 sm:pl-0">
             <div className="flex flex-col sm:flex-row sm:gap-2">
               <h2 className="text-[16px] sm:text-lg font-bold text-neutral-700 hover:underline cursor-pointer">
                 {post.authorName}
@@ -57,7 +57,7 @@ export default function PostCard({ post }) {
             </div>
 
             <h4 className="text-[12px] sm:text-[16px] mt-1 sm:mt-0.5 text-neutral-400 cursor-pointer">
-              {new Date(post.createdAt).toLocaleString()}
+              {new Date(post.createdAt).toLocaleDateString()}
             </h4>
           </div>
 
@@ -77,7 +77,7 @@ export default function PostCard({ post }) {
         </div>
 
         <div>
-          <p className="text-neutral-600 text-lg my-4 cursor-pointer">
+          <p className="text-neutral-600 text-lg my-4 cursor-pointer pl-3 sm:pl-0">
             {post.body}
           </p>
           <div className="text-neutral-600 my-4 cursor-pointer"></div>
@@ -106,14 +106,14 @@ export default function PostCard({ post }) {
             <button className="flex flex-row justify-center justify-items-center items-center">
               <AiOutlineRetweet className="text-lg font-bold cursor-pointer" />
             </button>
-            <p className="flex flex-row text-sm font-semi mt-0.5">3</p>
+            <p className="flex flex-row text-sm font-semi mt-0.5">0</p>
           </div>
 
           <div className="flex flex-row justify-center text-gray-500 hover:text-yellow-500 gap-1.5 cursor-pointer">
             <button className="flex flex-row justify-center justify-items-center items-center">
               <AiOutlineEye className="text-lg font-bold cursor-pointer" />
             </button>
-            <p className="flex flex-row text-sm font-semi mt-0.5">6543</p>
+            <p className="flex flex-row text-sm font-semi mt-0.5">0</p>
           </div>
         </div>
       </div>

@@ -57,7 +57,7 @@ export default function CommentsSection({ postId, initialComments }) {
             <div className="flex flex-row justify-between">
               <p className="flex font-semibold text-gray-600">{c.email}</p>{" "}
             <span className="text-sm text-neutral-400">
-              {new Date(c.createdAt).toLocaleString()}
+              {new Date(c.createdAt).toLocaleDateString()}
             </span>
             </div>
             
