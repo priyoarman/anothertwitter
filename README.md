@@ -9,7 +9,7 @@ Live Demo: https://anothertwitter.vercel.app/
 * **User Profiles** with their own tweet feeds
 * **Responsive UI** using Tailwind CSS
 * **Server‑side API routes** in Next.js
-* **Database ORM** powered by Prisma
+* **Database ORM** powered by Mongoose
 
 ## 🛠️ Tech Stack
 
