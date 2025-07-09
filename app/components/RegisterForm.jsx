@@ -38,7 +38,7 @@ const RegisterForm = () => {
   };
 
   return (
-    <div className="sticky w-1/2 border-r-1 border-gray-200 grid place-items-center h-screen container min-w-xl mx-auto px-6 py-6">
+    <div className="sticky w-1/2 border-r-1 border-gray-200 grid place-items-center h-screen container mx-auto px-6 py-6">
       <div className="shadow-md place-items-center shadow-blue-400 p-5 rounded-lg">
         <h1 className="text-2xl text-gray-800 font-semibold">
           Enter your details

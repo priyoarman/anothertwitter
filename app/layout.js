@@ -2,6 +2,7 @@ import LeftBar from "./components/LeftBar";
 import RightBar from "./components/RightBar";
 import "./globals.css";
 import { AuthProvider } from "./Providers";
+import { Analytics } from "@vercel/analytics/next"
 
 export const metadata = {
   title: "Y",
@@ -16,6 +17,7 @@ export default function RootLayout({ children }) {
           <div className="flex flex-row text-xl">
             <LeftBar />
             {children}
+            <Analytics/>
             <RightBar/>
           </div>
         </AuthProvider>
