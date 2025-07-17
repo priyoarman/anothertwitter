@@ -19,7 +19,7 @@ const RightBarBottom = () => {
             </div>
 
             <button
-              className="rounded-full px-4 py-2 bg-gray-500 text-white font-semibold hover:bg-blue-400 cursor-pointer text-shadow-xs text-sm"
+              className="rounded-full px-4 py-2 bg-gray-500 text-white font-semibold hover:bg-cyan-500 cursor-pointer text-shadow-xs text-sm"
             >
               Follow
             </button>

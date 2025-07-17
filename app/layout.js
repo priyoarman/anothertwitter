@@ -5,7 +5,7 @@ import { AuthProvider } from "./Providers";
 import { Analytics } from "@vercel/analytics/next"
 
 export const metadata = {
-  title: "Y",
+  title: "ReDILINK",
   description: "Created by Arman Hossain",
 };
 

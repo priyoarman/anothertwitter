@@ -62,19 +62,19 @@ export default function AddPost() {
       />
       <div className="flex flex-row justify-between items-center bg-gray-50 gap-2">
         <div className="flex flex-row">
-          <div className="pl-6 text-2xl text-blue-400">
+          <div className="pl-6 text-2xl text-cyan-500">
           <input type="file" name="" id="imageUpload" hidden />
           <label htmlFor="imageUpload">
             <PiImageSquareBold className="hover:text-gray-500 cursor-pointer" />
           </label>
         </div>
-        <div className="pl-6 text-2xl text-blue-400">
+        <div className="pl-6 text-2xl text-cyan-500">
           <input type="file" name="" id="imageUpload" hidden />
           <label htmlFor="imageUpload">
             <MdOutlineGifBox className="hover:text-gray-500 cursor-pointer" />
           </label>
         </div>
-        <div className="pl-6 text-2xl text-blue-400">
+        <div className="pl-6 text-2xl text-cyan-500">
           <input type="file" name="" id="imageUpload" hidden />
           <label htmlFor="imageUpload">
             <HiMiniListBullet className="hover:text-gray-500 cursor-pointer" />
@@ -84,7 +84,7 @@ export default function AddPost() {
         
         <button
           type="submit"
-          className="bg-gray-500 text-white text-sm font-bold rounded-3xl px-4 mx-2 my-2 h-10 hover:bg-blue-400 cursor-pointer"
+          className="bg-gray-500 text-white text-sm font-bold rounded-3xl px-4 mx-2 my-2 h-10 hover:bg-cyan-500 cursor-pointer"
         >
           Post
         </button>

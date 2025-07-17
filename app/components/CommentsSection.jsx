@@ -53,7 +53,7 @@ export default function CommentsSection({ postId, initialComments }) {
       <h3 className="text-lg font-semibold text-gray-600 px-4 py-2">{comments.length} Comments</h3>
       <div className="space-y-2">
         {comments.map((c) => (
-          <div key={c.id} className="flex flex-col p-2 pl-4 text-[16px] border border-gray-100 hover:bg-blue-50 w-full">
+          <div key={c.id} className="flex flex-col p-2 pl-4 text-[16px] border border-gray-100 hover:bg-cyan-50 w-full">
             <div className="flex flex-row justify-between">
               <p className="flex font-semibold text-gray-600">{c.email}</p>{" "}
             <span className="text-sm text-neutral-400">

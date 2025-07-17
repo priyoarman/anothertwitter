@@ -1,13 +1,11 @@
 import Link from "next/link";
-import { FaYahoo } from "react-icons/fa6";
-
+import Image from "next/image";
 import { BiHomeCircle } from "react-icons/bi";
 import { CgHashtag } from "react-icons/cg";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { HiOutlineEnvelope } from "react-icons/hi2";
 import { IoPersonOutline } from "react-icons/io5";
 import { BsThreeDots } from "react-icons/bs";
-
 
 const LeftBar = () => {
   return (
@@ -17,7 +15,13 @@ const LeftBar = () => {
           href={"/"}
           className="hover:bg-gray-200 text-[28px] text-blue-400 text-blue-40 font-bold transition duration-200 flex items-center justify-start w-full lg:w-fit space-x-2 rounded-3xl py-2 lg:px-4 px-2 pl-4"
         >
-          <FaYahoo />
+          <Image
+            src="/ReDI.png"
+            width={24}
+            height={24}
+            alt="ReDI"
+            className="animate-[spin_5s] [animation-iteration-count:infinite]"
+          />
           {/* <p className="hidden lg:block">Twitter</p> */}
         </Link>
         <Link
@@ -65,17 +69,16 @@ const LeftBar = () => {
           <div className="flex flex-row w-10 h-10 bg-neutral-600 rounded-full"></div>
 
           <div className="flex-col">
-            <div className="text-[16px] text-gray-800 font-bold">
-            My Name
+            <div className="text-[16px] text-gray-800 font-bold">My Name</div>
+            <div className="text-[14px] text-gray-600 font-medium">
+              @myusername
+            </div>
           </div>
-          <div className="text-[14px] text-gray-600 font-medium">
-            @myusername
-          </div>
-          </div>
-          
         </div>
 
-        <div className="flex flex-col w-fit justify-center items-center"><BsThreeDots/></div>
+        <div className="flex flex-col w-fit justify-center items-center">
+          <BsThreeDots />
+        </div>
       </div>
     </div>
   );

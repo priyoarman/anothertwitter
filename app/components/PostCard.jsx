@@ -38,7 +38,7 @@ export default function PostCard({ post }) {
   }
 
   return (
-    <div className="flex flex-row gap-2 sm:gap-0 w-full border-slate-300 shadow-md hover:shadow-lg transition-all bg-gray-50 hover:bg-blue-50 z-20">
+    <div className="flex flex-row gap-2 sm:gap-0 w-full border-slate-300 shadow-md hover:shadow-lg transition-all bg-gray-50 hover:bg-cyan-50 z-20">
       <div className="flex flex-col justify-items-start items-start w-1/12 px-4 py-4">
         <div className="flex w-10 h-10 bg-neutral-600 rounded-full"></div>
       </div>
@@ -56,7 +56,7 @@ export default function PostCard({ post }) {
               </h3>
             </div>
 
-            <h4 className="text-[12px] sm:text-[16px] mt-1 sm:mt-0.5 text-neutral-400 cursor-pointer">
+            <h4 className="text-[12px] sm:text-[16px] mt-1 sm:mt-0.5 text-neutral-400">
               {new Date(post.createdAt).toLocaleDateString()}
             </h4>
           </div>
@@ -77,7 +77,7 @@ export default function PostCard({ post }) {
         </div>
 
         <div>
-          <p className="text-neutral-600 text-lg my-4 cursor-pointer px-1 sm:pl-0">
+          <p className="text-neutral-600 text-lg my-4 px-1 sm:pl-0">
             {post.body}
           </p>
           <div className="text-neutral-600 my-4 cursor-pointer"></div>

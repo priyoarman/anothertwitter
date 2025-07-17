@@ -16,7 +16,7 @@ export default function News() {
       {news.slice(0, articleNum).map((article) => (
         <div key={article.url}>
           <a href={article.url} target='_blank'>
-            <div className='flex items-center justify-between px-4 py-2 space-x-1 hover:bg-blue-50 transition duration-200'>
+            <div className='flex items-center justify-between px-4 py-2 space-x-1 hover:bg-cyan-50 transition duration-200'>
               <div className='space-y-0.5'>
                 <h6 className='text-sm font-bold'>{article.title}</h6>
                 <p className='text-xs font-medium text-gray-500'>
@@ -30,7 +30,7 @@ export default function News() {
       ))}
       <button
         onClick={() => setArticleNum(articleNum + 3)}
-        className='text-gray-700 font-semibold pl-4 pb-3 hover:text-blue-400 cursor-pointer text-sm'
+        className='text-gray-700 font-semibold pl-4 pb-3 hover:text-cyan-500 cursor-pointer text-sm'
       >
         Load more
       </button>
