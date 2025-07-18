@@ -9,11 +9,11 @@ import { BsThreeDots } from "react-icons/bs";
 
 const LeftBar = () => {
   return (
-    <div className="sticky top-0 lg:flex flex-col w-14 lg:w-1/4 items-stretch h-screen bg-gray-50 border-r-1 border-gray-200 justify-center py-3 lg:px-12">
-      <div className="flex flex-col text-black items-center lg:items-stretch h-full space-y-2 z-0">
+    <div className="hidden border-r-1 border-gray-200 bg-gray-50 py-3 sm:sticky sm:top-0 sm:flex sm:h-screen sm:w-14 sm:flex-col sm:items-stretch sm:justify-center lg:w-1/4 lg:px-12">
+      <div className="z-0 flex h-full flex-col items-center space-y-3 text-black lg:items-stretch">
         <Link
           href={"/"}
-          className="hover:bg-gray-200 text-[28px] text-blue-400 text-blue-40 font-bold transition duration-200 flex items-center justify-start w-full lg:w-fit space-x-2 rounded-3xl py-2 lg:px-4 px-2 pl-4"
+          className="text-blue-40 flex w-full items-center justify-start space-x-2 rounded-3xl px-2 py-2 pl-4 text-[28px] font-bold text-blue-400 transition duration-200 hover:bg-gray-200 lg:w-fit lg:px-4"
         >
           <Image
             src="/ReDI.png"
@@ -26,21 +26,21 @@ const LeftBar = () => {
         </Link>
         <Link
           href={"/"}
-          className="hover:bg-gray-200 text-2xl lg:text-xl text-gray-800 text-blue-40 font-bold transition duration-200 flex items-center justify-start w-full lg:w-fit space-x-2 rounded-3xl py-2 lg:px-4 px-2 pl-4"
+          className="text-blue-40 flex w-full items-center justify-start space-x-2 rounded-3xl px-2 py-2 pl-4 text-2xl font-bold text-gray-800 transition duration-200 hover:bg-gray-200 lg:w-fit lg:px-4 lg:text-xl"
         >
           <BiHomeCircle />
           <p className="hidden lg:block">Home</p>
         </Link>
         <Link
           href={"/"}
-          className="hover:bg-gray-200 text-2xl lg:text-xl text-gray-800 text-blue-40 font-bold transition duration-200 flex items-center justify-start w-full lg:w-fit space-x-2 rounded-3xl py-2 lg:px-4 px-2 pl-4"
+          className="text-blue-40 flex w-full items-center justify-start space-x-2 rounded-3xl px-2 py-2 pl-4 text-2xl font-bold text-gray-800 transition duration-200 hover:bg-gray-200 lg:w-fit lg:px-4 lg:text-xl"
         >
           <CgHashtag />
           <p className="hidden lg:block">Explore</p>
         </Link>{" "}
         <Link
           href={"/"}
-          className="hover:bg-gray-200 text-2xl lg:text-xl text-gray-800 text-blue-40 font-bold transition duration-200 flex items-center justify-start w-full lg:w-fit space-x-2 rounded-3xl py-2 lg:px-4 px-2 pl-4"
+          className="text-blue-40 flex w-full items-center justify-start space-x-2 rounded-3xl px-2 py-2 pl-4 text-2xl font-bold text-gray-800 transition duration-200 hover:bg-gray-200 lg:w-fit lg:px-4 lg:text-xl"
         >
           <IoMdNotificationsOutline />
 
@@ -48,7 +48,7 @@ const LeftBar = () => {
         </Link>
         <Link
           href={"/"}
-          className="hover:bg-gray-200 text-2xl lg:text-xl text-gray-800 text-blue-40 font-bold transition duration-200 flex items-center justify-start w-full lg:w-fit space-x-2 rounded-3xl py-2 lg:px-4 px-2 pl-4"
+          className="text-blue-40 flex w-full items-center justify-start space-x-2 rounded-3xl px-2 py-2 pl-4 text-2xl font-bold text-gray-800 transition duration-200 hover:bg-gray-200 lg:w-fit lg:px-4 lg:text-xl"
         >
           <HiOutlineEnvelope />
 
@@ -56,7 +56,7 @@ const LeftBar = () => {
         </Link>
         <Link
           href={"/profile"}
-          className="hover:bg-gray-200 text-2xl lg:text-xl text-gray-800 text-blue-40 font-bold transition duration-200 flex items-center justify-start w-full lg:w-fit space-x-2 rounded-3xl py-2 lg:px-4 px-2 pl-4"
+          className="text-blue-40 flex w-full items-center justify-start space-x-2 rounded-3xl px-2 py-2 pl-4 text-2xl font-bold text-gray-800 transition duration-200 hover:bg-gray-200 lg:w-fit lg:px-4 lg:text-xl"
         >
           <IoPersonOutline />
 
@@ -64,19 +64,19 @@ const LeftBar = () => {
         </Link>
       </div>
 
-      <div className="hidden lg:flex flex-row gap-2 w-full justify-between hover:bg-gray-200 cursor-pointer rounded-full py-2 px-2">
+      <div className="hidden w-full cursor-pointer flex-row justify-between gap-2 rounded-full px-2 py-2 hover:bg-gray-200 lg:flex">
         <div className="flex flex-row gap-2">
-          <div className="flex flex-row w-10 h-10 bg-neutral-600 rounded-full"></div>
+          <div className="flex h-10 w-10 flex-row rounded-full bg-neutral-600"></div>
 
           <div className="flex-col">
-            <div className="text-[16px] text-gray-800 font-bold">My Name</div>
-            <div className="text-[14px] text-gray-600 font-medium">
+            <div className="text-[16px] font-bold text-gray-800">My Name</div>
+            <div className="text-[14px] font-medium text-gray-600">
               @myusername
             </div>
           </div>
         </div>
 
-        <div className="flex flex-col w-fit justify-center items-center">
+        <div className="flex w-fit flex-col items-center justify-center">
           <BsThreeDots />
         </div>
       </div>

@@ -25,17 +25,17 @@ export default function CommentsSection({ postId, initialComments }) {
       });
       if (!res.ok) {
         const err = await res.json().catch(() => ({}));
-      console.error("Comment API error:", res.status, err);
-      return;
-      };
+        console.error("Comment API error:", res.status, err);
+        return;
+      }
       const data = await res.json();
       setComments((c) => [
         ...c,
         {
-          id:        data.latestComment._id,
-          userId:    data.latestComment.user,
-          email:     data.latestComment.email,
-          body:      data.latestComment.body,
+          id: data.latestComment._id,
+          userId: data.latestComment.user,
+          email: data.latestComment.email,
+          body: data.latestComment.body,
           createdAt: data.latestComment.createdAt,
         },
       ]);
@@ -48,43 +48,47 @@ export default function CommentsSection({ postId, initialComments }) {
   };
 
   return (
-    <div className="flex flex-row gap-2 sm:gap-0 w-full border-slate-300 shadow-md hover:shadow-lg transition-all bg-gray-50 z-20">
-      <div className="flex flex-col space-y-4 w-full">
-      <h3 className="text-lg font-semibold text-gray-600 px-4 py-2">{comments.length} Comments</h3>
-      <div className="space-y-2">
-        {comments.map((c) => (
-          <div key={c.id} className="flex flex-col p-2 pl-4 text-[16px] border border-gray-100 hover:bg-cyan-50 w-full">
-            <div className="flex flex-row justify-between">
-              <p className="flex font-semibold text-gray-600">{c.email}</p>{" "}
-            <span className="text-sm text-neutral-400">
-              {new Date(c.createdAt).toLocaleDateString()}
-            </span>
-            </div>
-            
-            <p className="flex py-4">{c.body}</p>
-          </div>
-        ))}
-      </div>
+    <div className="z-20 flex w-full flex-row gap-2 border-slate-300 bg-gray-50 shadow-md transition-all hover:shadow-lg sm:gap-0">
+      <div className="flex w-full flex-col space-y-4">
+        <h3 className="px-4 py-2 text-lg font-semibold text-gray-600">
+          {comments.length} Comments
+        </h3>
+        <div className="space-y-2">
+          {comments.map((c) => (
+            <div
+              key={c.id}
+              className="flex w-full flex-col border border-gray-100 p-2 pl-4 text-[16px] hover:bg-cyan-50"
+            >
+              <div className="flex flex-row justify-between">
+                <p className="flex font-semibold text-gray-600">{c.email}</p>{" "}
+                <span className="text-sm text-neutral-400">
+                  {new Date(c.createdAt).toLocaleDateString()}
+                </span>
+              </div>
 
-      <div className="mt-4">
-        <textarea
-          className="bg-gray-50 outline-0 border-b-1 border-gray-200 h-24 w-full px-4 py-4 resize-none placeholder:font-medium"
-          rows={3}
-          placeholder="Write a comment…"
-          value={newComment}
-          onChange={(e) => setNewComment(e.target.value)}
-          disabled={saving}
-        />
-        <button
-          className="bg-gray-500 text-white text-sm font-bold rounded-3xl px-4 mx-2 my-2 h-10 hover:bg-blue-400 cursor-pointer"
-          onClick={handleAdd}
-          disabled={saving}
-        >
-          {saving ? "Posting…" : "Comment"}
-        </button>
+              <p className="flex py-4">{c.body}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-4">
+          <textarea
+            className="h-24 w-full resize-none border-b-1 border-gray-200 bg-gray-50 px-4 py-4 outline-0 placeholder:font-medium"
+            rows={3}
+            placeholder="Write a comment…"
+            value={newComment}
+            onChange={(e) => setNewComment(e.target.value)}
+            disabled={saving}
+          />
+          <button
+            className="mx-2 my-2 h-10 cursor-pointer rounded-3xl bg-gray-500 px-4 text-sm font-bold text-white hover:bg-blue-400"
+            onClick={handleAdd}
+            disabled={saving}
+          >
+            {saving ? "Posting…" : "Comment"}
+          </button>
+        </div>
       </div>
     </div>
-    </div>
-    
   );
 }

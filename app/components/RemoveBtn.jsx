@@ -22,7 +22,7 @@ const RemoveBtn = ({ id }) => {
 
   return (
     <div>
-      <button onClick={removePost} className="text-red-500 cursor-pointer">
+      <button onClick={removePost} className="cursor-pointer text-red-500">
         <FiTrash2 />
       </button>
     </div>

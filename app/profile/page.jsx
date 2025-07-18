@@ -7,7 +7,7 @@ import Post from "@/models/posts";
 const Profile = async () => {
   const session = await getServerSession(authOptions);
   if (!session) {
-    `redirect("/login")`
+    `redirect("/login")`;
   }
 
   await connectMongoDB();

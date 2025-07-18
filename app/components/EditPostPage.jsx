@@ -24,25 +24,25 @@ const EditPostPage = ({ id, body }) => {
   };
 
   return (
-      <div className="sticky md:w-2/4 flex flex-col container border-r-1 border-gray-200 py-2 z-10">
-        <form
-          onSubmit={handleSubmit}
-          className="flex flex-col justify-around border-b-1 border-gray-200 mb-6"
-        >
-          <input
-            onChange={(e) => setNewBody(e.target.value)}
-            value={newBody}
-            className="bg-gray-50 outline-blue-400 border-b-1 border-gray-200 h-24 px-4 py-4 mb-2 resize-none"
-            type="text"
-            placeholder="What's on your mind?"
-          />
-          <div className="flex flex-row justify-end-safe">
-            <button className="bg-gray-500 text-white text-sm font-bold rounded-3xl px-4 mx-2 my-2 h-10 hover:bg-blue-400 cursor-pointer">
-              Update
-            </button>
-          </div>
-        </form>
-      </div>
+    <div className="sticky z-10 container flex flex-col border-r-1 border-gray-200 py-2 md:w-2/4">
+      <form
+        onSubmit={handleSubmit}
+        className="mb-6 flex flex-col justify-around border-b-1 border-gray-200"
+      >
+        <input
+          onChange={(e) => setNewBody(e.target.value)}
+          value={newBody}
+          className="mb-2 h-24 resize-none border-b-1 border-gray-200 bg-gray-50 px-4 py-4 outline-blue-400"
+          type="text"
+          placeholder="What's on your mind?"
+        />
+        <div className="flex flex-row justify-end-safe">
+          <button className="mx-2 my-2 h-10 cursor-pointer rounded-3xl bg-gray-500 px-4 text-sm font-bold text-white hover:bg-blue-400">
+            Update
+          </button>
+        </div>
+      </form>
+    </div>
   );
 };
 

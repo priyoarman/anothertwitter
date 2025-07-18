@@ -45,8 +45,8 @@ export default async function CommentsPage({ params }) {
   };
 
   return (
-    <div className="sticky md:w-2/4 flex flex-col container border-r-1 border-gray-200 py-2 z-10">
-      <p className="flex py-4 px-4 text-gray-700 font-bold">Comments</p>
+    <div className="sticky z-10 container flex flex-col border-r-1 border-gray-200 py-2 md:w-2/4">
+      <p className="flex px-4 py-4 font-bold text-gray-700">Comments</p>
       <PostCard post={post} />
       <CommentsSection postId={post._id} initialComments={post.comments} />
     </div>

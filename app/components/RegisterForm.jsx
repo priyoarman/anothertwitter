@@ -38,42 +38,42 @@ const RegisterForm = () => {
   };
 
   return (
-    <div className="sticky w-1/2 border-r-1 border-gray-200 grid place-items-center h-screen container mx-auto px-6 py-6">
-      <div className="shadow-md place-items-center shadow-blue-400 p-5 rounded-lg">
-        <h1 className="text-2xl text-gray-800 font-semibold">
+    <div className="sticky container mx-auto grid h-screen w-1/2 place-items-center border-r-1 border-gray-200 px-6 py-6">
+      <div className="place-items-center rounded-lg p-5 shadow-md shadow-blue-400">
+        <h1 className="text-2xl font-semibold text-gray-800">
           Enter your details
         </h1>
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col gap-4 mt-4 justify-center items-center"
+          className="mt-4 flex flex-col items-center justify-center gap-4"
         >
           <input
-            className="w-[400px] bg-gray-50 rounded-xl text-gray-900 text-[16px] placeholder-gray-500 border-1 border-gray-200 py-2 px-6"
+            className="w-[400px] rounded-xl border-1 border-gray-200 bg-gray-50 px-6 py-2 text-[16px] text-gray-900 placeholder-gray-500"
             onChange={(e) => setName(e.target.value)}
             type="text"
             placeholder="Name"
           />
           <input
-            className="w-[400px] bg-gray-50 rounded-xl text-gray-900 text-[16px] placeholder-gray-500 border-1 border-gray-200 py-2 px-6"
+            className="w-[400px] rounded-xl border-1 border-gray-200 bg-gray-50 px-6 py-2 text-[16px] text-gray-900 placeholder-gray-500"
             onChange={(e) => setEmail(e.target.value)}
             type="text"
             placeholder="Email"
           />
           <input
-            className="w-[400px] bg-gray-50 rounded-xl text-gray-900 text-[16px] placeholder-gray-500 border-1 border-gray-200 py-2 px-6"
+            className="w-[400px] rounded-xl border-1 border-gray-200 bg-gray-50 px-6 py-2 text-[16px] text-gray-900 placeholder-gray-500"
             onChange={(e) => setPassword(e.target.value)}
             type="password"
             placeholder="Password"
           />
-          <div className="flex flex-row w-full justify-between">
+          <div className="flex w-full flex-row justify-between">
             <button
-              className="bg-emerald-600 w-1/4 text-white text-sm rounded-xl px-4 h-8 hover:bg-emerald-500 cursor-pointer"
+              className="h-8 w-1/4 cursor-pointer rounded-xl bg-emerald-600 px-4 text-sm text-white hover:bg-emerald-500"
               type="submit"
             >
               Register
             </button>
             <Link href="/login">
-              <div className="flex flex-row gap-1 mt-2 text-gray-700 text-sm text-right">
+              <div className="mt-2 flex flex-row gap-1 text-right text-sm text-gray-700">
                 Already have an account?{" "}
                 <span className="text-blue-400 hover:text-gray-500 hover:underline">
                   Login!
@@ -83,7 +83,7 @@ const RegisterForm = () => {
           </div>
         </form>
         {error && (
-          <div className="bg-red-500 text-white w-fit text-sm py-1 px-3 rounded-md mt-4">
+          <div className="mt-4 w-fit rounded-md bg-red-500 px-3 py-1 text-sm text-white">
             {error}
           </div>
         )}

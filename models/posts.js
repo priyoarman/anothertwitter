@@ -1,5 +1,5 @@
 import mongoose, { Schema } from "mongoose";
-import User from "./user"
+import User from "./user";
 
 const CommentSchema = new Schema(
   {
@@ -7,7 +7,7 @@ const CommentSchema = new Schema(
     email: { type: String, required: true },
     body: { type: String, required: true },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 const postsSchema = new Schema(
@@ -16,9 +16,11 @@ const postsSchema = new Schema(
       type: String,
       required: true,
     },
-    images: [{
-      type: String,
-    }],
+    images: [
+      {
+        type: String,
+      },
+    ],
     authorId: {
       type: String,
       required: true,
@@ -43,9 +45,9 @@ const postsSchema = new Schema(
   },
   {
     timestamps: true,
-    toJSON:   { virtuals: true },
+    toJSON: { virtuals: true },
     toObject: { virtuals: true },
-  }
+  },
 );
 
 postsSchema.virtual("likesCount").get(function () {

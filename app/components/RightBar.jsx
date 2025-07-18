@@ -18,11 +18,11 @@ const RightBar = () => {
     }, 100);
   };
   return (
-    <div className="lg:w-1/4 sm:w-1/4 sticky hidden overflow-y-auto sm:flex flex-col items-stretch overflow-x-hidden px-2 py-2 gap-3">
-      <form onSubmit={handleSubmit} className="relative w-full h-fit group">
+    <div className="sticky hidden flex-col items-stretch gap-3 overflow-x-hidden overflow-y-auto px-2 py-2 sm:flex sm:w-1/4 lg:w-1/4">
+      <form onSubmit={handleSubmit} className="group relative h-fit w-full">
         <input
           id="searchBox"
-          className="border border-gray-200 bg-gray-50 text-gray-800 w-full h-full rounded-xl py-2 pl-14 pr-4"
+          className="h-full w-full rounded-xl border border-gray-200 bg-gray-50 py-2 pr-4 pl-14 text-gray-800"
           type="text"
           placeholder="Search"
           value={input}
@@ -30,9 +30,9 @@ const RightBar = () => {
         />
         <label
           htmlFor="searchBox"
-          className="absolute top-0 left-0 h-full flex items-center justify-center p-4 text-gray-400 peer-focus:text-primary"
+          className="peer-focus:text-primary absolute top-0 left-0 flex h-full items-center justify-center p-4 text-gray-400"
         >
-          <BsSearch className="w-5 h-5" />
+          <BsSearch className="h-5 w-5" />
         </label>
       </form>
       <RightBarTop />
