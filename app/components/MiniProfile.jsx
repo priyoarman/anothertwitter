@@ -7,14 +7,16 @@ const MiniProfile = () => {
         <div className="flex h-10 w-10 flex-row rounded-full bg-neutral-600"></div>
 
         <div className="flex-col">
-          <div className="hidden sm:flex text-[16px] font-bold text-gray-800">My Name</div>
-          <div className="hidden sm:flex text-[14px] font-medium text-gray-600">
+          <div className="hidden text-[16px] font-bold text-gray-800 sm:flex">
+            My Name
+          </div>
+          <div className="hidden text-[14px] font-medium text-gray-600 sm:flex">
             @myusername
           </div>
         </div>
       </div>
 
-      <div className="hidden sm:flex w-fit flex-col items-center justify-center">
+      <div className="hidden w-fit flex-col items-center justify-center sm:flex">
         <BsThreeDots />
       </div>
     </div>

@@ -14,7 +14,7 @@ const LeftBar = () => {
       <div className="fixed inset-x-0 bottom-0 z-0 flex flex-row items-center justify-around space-y-2 py-2 text-black sm:static sm:inset-auto sm:bottom-auto sm:flex sm:h-screen sm:w-fit sm:flex-col sm:items-start sm:justify-start lg:w-1/4">
         <Link
           href={"/"}
-          className="hidden sm:w-full sm:items-center sm:justify-start sm:space-x-2 sm:rounded-3xl sm:px-2 sm:py-2 sm:pl-4 sm:text-[28px] sm:font-bold sm:text-blue-400 sm:transition sm:duration-200 hover:bg-gray-200 sm:flex"
+          className="hidden hover:bg-gray-200 sm:flex sm:w-full sm:items-center sm:justify-start sm:space-x-2 sm:rounded-3xl sm:px-2 sm:py-2 sm:pl-4 sm:text-[28px] sm:font-bold sm:text-blue-400 sm:transition sm:duration-200"
         >
           <Image
             src="/ReDI.png"
@@ -57,7 +57,7 @@ const LeftBar = () => {
         </Link>
         <Link
           href={"/profile"}
-          className="flex w-full items-center justify-center space-x-2 rounded-3xl px-2 py-2 pl-4 text-2xl font-bold text-gray-800 transition duration-200 hover:bg-gray-200 sm:justify-start lg:w-fit lg:px-4 lg:text-xl"
+          className="flex w-full items-center justify-center space-x-2 rounded-3xl px-2 py-2 pb-4 pl-4 text-2xl font-bold text-gray-800 transition duration-200 hover:bg-gray-200 sm:justify-start lg:w-fit lg:px-4 lg:text-xl"
         >
           <IoPersonOutline />
 
