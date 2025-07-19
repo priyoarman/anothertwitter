@@ -10,7 +10,7 @@ import MiniProfile from "./MiniProfile";
 
 const LeftBar = () => {
   return (
-    <div className="z-30 bg-gray-50 sm:sticky sm:top-0 sm:flex sm:h-screen sm:w-14 sm:flex-col sm:items-stretch sm:justify-center sm:border-r-1 sm:border-gray-200 sm:py-3 lg:w-1/4 lg:px-12">
+    <div className="z-20 bg-gray-50 sm:sticky sm:top-0 sm:flex sm:h-screen sm:w-14 sm:flex-col sm:items-stretch sm:justify-center sm:border-r-1 sm:border-gray-200 sm:py-3 lg:w-1/4 lg:px-12">
       <div className="fixed inset-x-0 bottom-0 z-0 flex flex-row items-center justify-around space-y-2 py-2 text-black sm:static sm:inset-auto sm:bottom-auto sm:flex sm:h-screen sm:w-fit sm:flex-col sm:items-start sm:justify-start lg:w-1/4">
         <Link
           href={"/"}
