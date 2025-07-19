@@ -48,7 +48,7 @@ export default function CommentsSection({ postId, initialComments }) {
   };
 
   return (
-    <div className="z-10 flex w-full flex-row gap-2 border-slate-300 bg-gray-50 shadow-md transition-all hover:shadow-lg sm:gap-0">
+    <div className="z-10 flex w-full flex-row gap-2 border-slate-300 bg-gray-50 shadow-md transition-all hover:shadow-lg pb-10 sm:gap-0">
       <div className="flex w-full flex-col space-y-4">
         <h3 className="px-4 py-2 text-lg font-semibold text-gray-600">
           {comments.length} Comments
