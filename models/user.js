@@ -16,8 +16,21 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
-    profileImage: { type: String },
-    coverImage: { type: String },
+    profileImage: { 
+      type: String 
+    },
+    coverImage: {
+       type: String 
+    },
+    bio: {
+       type: String 
+    },
+    location: {
+       type: String 
+    },
+    website: {
+       type: String 
+    },
   },
   {
     timestamps: true,

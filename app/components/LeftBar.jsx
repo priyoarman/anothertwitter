@@ -6,14 +6,15 @@ import { IoMdNotificationsOutline } from "react-icons/io";
 import { HiOutlineEnvelope } from "react-icons/hi2";
 import { IoPersonOutline } from "react-icons/io5";
 import { BsThreeDots } from "react-icons/bs";
+import MiniProfile from "./MiniProfile";
 
 const LeftBar = () => {
   return (
-    <div className="hidden border-r-1 border-gray-200 bg-gray-50 py-3 sm:sticky sm:top-0 sm:flex sm:h-screen sm:w-14 sm:flex-col sm:items-stretch sm:justify-center lg:w-1/4 lg:px-12">
-      <div className="z-0 flex h-full flex-col items-center space-y-3 text-black lg:items-stretch">
+    <div className="bg-gray-50 sm:sticky sm:top-0 sm:flex sm:h-screen sm:w-14 sm:flex-col sm:items-stretch sm:justify-center sm:border-r-1 sm:border-gray-200 sm:py-3 lg:w-1/4 lg:px-12">
+      <div className="fixed inset-x-0 bottom-0 z-0 flex flex-row items-center justify-around space-y-2 py-2 text-black sm:static sm:inset-auto sm:bottom-auto sm:flex sm:h-screen sm:w-fit sm:flex-col sm:items-start sm:justify-start lg:w-1/4">
         <Link
           href={"/"}
-          className="text-blue-40 flex w-full items-center justify-start space-x-2 rounded-3xl px-2 py-2 pl-4 text-[28px] font-bold text-blue-400 transition duration-200 hover:bg-gray-200 lg:w-fit lg:px-4"
+          className="hidden sm:w-full sm:items-center sm:justify-start sm:space-x-2 sm:rounded-3xl sm:px-2 sm:py-2 sm:pl-4 sm:text-[28px] sm:font-bold sm:text-blue-400 sm:transition sm:duration-200 hover:bg-gray-200 sm:flex"
         >
           <Image
             src="/ReDI.png"
@@ -26,21 +27,21 @@ const LeftBar = () => {
         </Link>
         <Link
           href={"/"}
-          className="text-blue-40 flex w-full items-center justify-start space-x-2 rounded-3xl px-2 py-2 pl-4 text-2xl font-bold text-gray-800 transition duration-200 hover:bg-gray-200 lg:w-fit lg:px-4 lg:text-xl"
+          className="flex w-full items-center justify-center space-x-2 rounded-3xl px-2 py-2 pl-4 text-2xl font-bold text-gray-800 transition duration-200 hover:bg-gray-200 sm:justify-start lg:w-fit lg:px-4 lg:text-xl"
         >
           <BiHomeCircle />
           <p className="hidden lg:block">Home</p>
         </Link>
         <Link
           href={"/"}
-          className="text-blue-40 flex w-full items-center justify-start space-x-2 rounded-3xl px-2 py-2 pl-4 text-2xl font-bold text-gray-800 transition duration-200 hover:bg-gray-200 lg:w-fit lg:px-4 lg:text-xl"
+          className="flex w-full items-center justify-center space-x-2 rounded-3xl px-2 py-2 pl-4 text-2xl font-bold text-gray-800 transition duration-200 hover:bg-gray-200 sm:justify-start lg:w-fit lg:px-4 lg:text-xl"
         >
           <CgHashtag />
           <p className="hidden lg:block">Explore</p>
         </Link>{" "}
         <Link
           href={"/"}
-          className="text-blue-40 flex w-full items-center justify-start space-x-2 rounded-3xl px-2 py-2 pl-4 text-2xl font-bold text-gray-800 transition duration-200 hover:bg-gray-200 lg:w-fit lg:px-4 lg:text-xl"
+          className="flex w-full items-center justify-center space-x-2 rounded-3xl px-2 py-2 pl-4 text-2xl font-bold text-gray-800 transition duration-200 hover:bg-gray-200 sm:justify-start lg:w-fit lg:px-4 lg:text-xl"
         >
           <IoMdNotificationsOutline />
 
@@ -48,7 +49,7 @@ const LeftBar = () => {
         </Link>
         <Link
           href={"/"}
-          className="text-blue-40 flex w-full items-center justify-start space-x-2 rounded-3xl px-2 py-2 pl-4 text-2xl font-bold text-gray-800 transition duration-200 hover:bg-gray-200 lg:w-fit lg:px-4 lg:text-xl"
+          className="flex w-full items-center justify-center space-x-2 rounded-3xl px-2 py-2 pl-4 text-2xl font-bold text-gray-800 transition duration-200 hover:bg-gray-200 sm:justify-start lg:w-fit lg:px-4 lg:text-xl"
         >
           <HiOutlineEnvelope />
 
@@ -56,7 +57,7 @@ const LeftBar = () => {
         </Link>
         <Link
           href={"/profile"}
-          className="text-blue-40 flex w-full items-center justify-start space-x-2 rounded-3xl px-2 py-2 pl-4 text-2xl font-bold text-gray-800 transition duration-200 hover:bg-gray-200 lg:w-fit lg:px-4 lg:text-xl"
+          className="flex w-full items-center justify-center space-x-2 rounded-3xl px-2 py-2 pl-4 text-2xl font-bold text-gray-800 transition duration-200 hover:bg-gray-200 sm:justify-start lg:w-fit lg:px-4 lg:text-xl"
         >
           <IoPersonOutline />
 
@@ -65,20 +66,7 @@ const LeftBar = () => {
       </div>
 
       <div className="hidden w-full cursor-pointer flex-row justify-between gap-2 rounded-full px-2 py-2 hover:bg-gray-200 lg:flex">
-        <div className="flex flex-row gap-2">
-          <div className="flex h-10 w-10 flex-row rounded-full bg-neutral-600"></div>
-
-          <div className="flex-col">
-            <div className="text-[16px] font-bold text-gray-800">My Name</div>
-            <div className="text-[14px] font-medium text-gray-600">
-              @myusername
-            </div>
-          </div>
-        </div>
-
-        <div className="flex w-fit flex-col items-center justify-center">
-          <BsThreeDots />
-        </div>
+        <MiniProfile />
       </div>
     </div>
   );
