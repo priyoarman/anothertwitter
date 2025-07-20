@@ -14,7 +14,10 @@ export default function CommentsSection({ postId, initialComments }) {
       alert("Log in to comment.");
       return;
     }
-    if (!newComment.trim()) return;
+    if (!newComment.trim()) {
+      alert("Write something to comment!");
+      return;
+    };
 
     setSaving(true);
     try {
@@ -81,7 +84,7 @@ export default function CommentsSection({ postId, initialComments }) {
             disabled={saving}
           />
           <button
-            className="mx-2 my-2 h-10 cursor-pointer rounded-3xl bg-gray-500 px-4 text-sm font-bold text-white hover:bg-blue-400"
+            className="mx-2 my-2 h-10 cursor-pointer rounded-3xl bg-gray-500 px-4 text-sm font-bold text-white hover:bg-cyan-500"
             onClick={handleAdd}
             disabled={saving}
           >
