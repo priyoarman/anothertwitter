@@ -31,7 +31,7 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="sticky container grid h-screen w-fit place-items-center py-6">
+    <div className="sticky container grid h-screen w-full place-items-center sm:w-screen">
       <div className="place-items-center rounded-lg p-5 shadow-md shadow-blue-400">
         <h1 className="text-2xl font-semibold text-gray-700">Login</h1>
         <form
@@ -39,13 +39,13 @@ const LoginForm = () => {
           className="mt-4 flex flex-col items-center justify-center gap-4"
         >
           <input
-            className="w-[400px] rounded-xl border-1 border-gray-200 bg-gray-50 px-6 py-2 text-[16px] text-gray-900 placeholder-gray-500"
+            className="w-full rounded-xl border-1 border-gray-200 bg-gray-50 px-6 py-2 text-[16px] text-gray-900 placeholder-gray-500 sm:w-[400px]"
             onChange={(e) => setEmail(e.target.value)}
             type="text"
             placeholder="Email"
           />
           <input
-            className="w-[400px] rounded-xl border-1 border-gray-200 bg-gray-50 px-6 py-2 text-[16px] text-gray-900 placeholder-gray-500"
+            className="w-full rounded-xl border-1 border-gray-200 bg-gray-50 px-6 py-2 text-[16px] text-gray-900 placeholder-gray-500 sm:w-[400px]"
             onChange={(e) => setPassword(e.target.value)}
             type="password"
             placeholder="Password"
@@ -55,7 +55,7 @@ const LoginForm = () => {
               Login
             </button>
             <Link href="/register">
-              <div className="mt-2 flex flex-row gap-1 text-right text-sm text-gray-700">
+              <div className="mt-2 gap-1 text-right text-sm text-gray-700 sm:flex sm:flex-row">
                 Don't have an account?{" "}
                 <span className="text-emerald-600 hover:text-emerald-500 hover:underline">
                   Register!

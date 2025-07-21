@@ -38,7 +38,7 @@ const RegisterForm = () => {
   };
 
   return (
-    <div className="sticky container grid h-screen w-fit place-items-center py-6">
+    <div className="sticky container grid h-screen w-full place-items-center sm:w-screen">
       <div className="place-items-center rounded-lg p-5 shadow-md shadow-blue-400">
         <h1 className="text-2xl font-semibold text-gray-800">
           Enter your details
@@ -48,26 +48,26 @@ const RegisterForm = () => {
           className="mt-4 flex flex-col items-center justify-center gap-4"
         >
           <input
-            className="w-[400px] rounded-xl border-1 border-gray-200 bg-gray-50 px-6 py-2 text-[16px] text-gray-900 placeholder-gray-500"
+            className="w-full sm:w-[400px] rounded-xl border-1 border-gray-200 bg-gray-50 px-6 py-2 text-[16px] text-gray-900 placeholder-gray-500"
             onChange={(e) => setName(e.target.value)}
             type="text"
             placeholder="Name"
           />
           <input
-            className="w-[400px] rounded-xl border-1 border-gray-200 bg-gray-50 px-6 py-2 text-[16px] text-gray-900 placeholder-gray-500"
+            className="w-full sm:w-[400px] rounded-xl border-1 border-gray-200 bg-gray-50 px-6 py-2 text-[16px] text-gray-900 placeholder-gray-500"
             onChange={(e) => setEmail(e.target.value)}
             type="text"
             placeholder="Email"
           />
           <input
-            className="w-[400px] rounded-xl border-1 border-gray-200 bg-gray-50 px-6 py-2 text-[16px] text-gray-900 placeholder-gray-500"
+            className="w-full sm:w-[400px] rounded-xl border-1 border-gray-200 bg-gray-50 px-6 py-2 text-[16px] text-gray-900 placeholder-gray-500"
             onChange={(e) => setPassword(e.target.value)}
             type="password"
             placeholder="Password"
           />
           <div className="flex w-full flex-row justify-between">
             <button
-              className="h-8 w-1/4 cursor-pointer rounded-xl bg-emerald-600 px-4 text-sm text-white hover:bg-emerald-500"
+              className="h-8 w-1/4 cursor-pointer flex flex-row justify-center items-center rounded-xl bg-emerald-600 px-4 text-sm text-white hover:bg-emerald-500"
               type="submit"
             >
               Register
