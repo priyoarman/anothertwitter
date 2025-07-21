@@ -27,9 +27,9 @@ const MessagesPage = () => {
           <BsSearch />
         </div>
       </div>
-      <div className="flex flex-col py-4">
+      <div className="flex flex-col py-4 h-screen justify-center items-center animate-pulse">
         <h1 className="flex w-full items-center justify-center space-y-2 text-center text-2xl font-semibold text-blue-400">
-          Relax guys!
+          Hello there!
         </h1>
         <h2 className="flex w-full items-center justify-center space-y-2 text-center text-xl font-semibold text-gray-600">
           This page is still under construction!

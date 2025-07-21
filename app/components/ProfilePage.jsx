@@ -20,8 +20,8 @@ const ProfilePage = ({ posts }) => {
             <img src="null" alt="UserProfilePhoto" className="flex flex-col h-[100%] w-[100%] object-cover items-center rounded-full " />
           </div>
           <div className="py-2 px-2">
-            <button className="rounded-full px-4 py-2 bg-gray-800 text-white font-semibold hover:bg-cyan-500 cursor-pointer text-shadow-xs text-sm">
-              Follow
+            <button onClick={() => signOut()} className="rounded-full px-4 py-2 bg-red-500 text-white font-semibold hover:bg-red-600 cursor-pointer text-shadow-xs text-sm">
+              Log Out
             </button>
           </div>
         </div>
@@ -55,13 +55,6 @@ const ProfilePage = ({ posts }) => {
           <p><span className="font-bold">0</span> Following</p>
           
         </div>
-
-        <button
-          onClick={() => signOut()}
-          className="bg-red-500 text-white font-semibold py-1 px-5 mt-3 cursor-pointer w-fit rounded-3xl"
-        >
-          Log Out
-        </button>
       </div>
 
       <h2 className="text-gray-700 text-xl font-bold px-4 py-4 mb-4 border-y-1 border-gray-200">Posts</h2>

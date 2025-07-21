@@ -4,6 +4,9 @@ import Link from "next/link";
 import { useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { FcGoogle } from "react-icons/fc";
+import { FaFacebook } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa6";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -31,31 +34,31 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="sticky container grid h-screen w-full place-items-center sm:w-screen">
-      <div className="place-items-center rounded-lg p-5 shadow-md shadow-blue-400">
+    <div className="sticky container flex w-full flex-col place-items-center items-center justify-center h-screen sm:w-screen lg:w-2/4">
+      <div className="place-items-center px-5">
         <h1 className="text-2xl font-semibold text-gray-700">Login</h1>
         <form
           onSubmit={handleSubmit}
           className="mt-4 flex flex-col items-center justify-center gap-4"
         >
           <input
-            className="w-full rounded-xl border-1 border-gray-200 bg-gray-50 px-6 py-2 text-[16px] text-gray-900 placeholder-gray-500 sm:w-[400px]"
+            className="w-full rounded-full border-1 border-gray-200 bg-gray-50 px-6 py-2 text-[16px] text-gray-900 placeholder-gray-500 sm:w-[400px]"
             onChange={(e) => setEmail(e.target.value)}
             type="text"
             placeholder="Email"
           />
           <input
-            className="w-full rounded-xl border-1 border-gray-200 bg-gray-50 px-6 py-2 text-[16px] text-gray-900 placeholder-gray-500 sm:w-[400px]"
+            className="w-full rounded-full border-1 border-gray-200 bg-gray-50 px-6 py-2 text-[16px] text-gray-900 placeholder-gray-500 sm:w-[400px]"
             onChange={(e) => setPassword(e.target.value)}
             type="password"
             placeholder="Password"
           />
-          <div className="flex w-full flex-row justify-between">
-            <button className="h-8 w-1/4 cursor-pointer rounded-xl bg-blue-400 px-4 text-sm text-white hover:bg-blue-300">
+          <div className="flex w-full flex-col gap-y-2 justify-between">
+            <button className="w-full cursor-pointer rounded-full bg-blue-400 px-4 py-2 text-[16px] text-white hover:bg-blue-500">
               Login
             </button>
             <Link href="/register">
-              <div className="mt-2 gap-1 text-right text-sm text-gray-700 sm:flex sm:flex-row">
+              <div className="mt-2 gap-1 flex flex-row justify-center items-center text-sm text-gray-700 sm:flex sm:flex-row">
                 Don't have an account?{" "}
                 <span className="text-emerald-600 hover:text-emerald-500 hover:underline">
                   Register!
@@ -65,11 +68,33 @@ const LoginForm = () => {
           </div>
         </form>
         {error && (
-          <div className="mt-4 w-fit rounded-md bg-red-500 px-3 py-1 text-sm text-white">
+          <div className="mt-4 w-fit rounded-sm bg-red-500 px-3 py-1 text-sm text-white animate-pulse">
             {error}
           </div>
         )}
       </div>
+      <div className="flex flex-col py-4 text-lg">OR</div>
+      <div className="flex flex-col gap-y-4">
+        <button className="flex flex-row items-center justify-between gap-x-3 rounded-full border-1 border-gray-200 px-4 py-2 cursor-pointer">
+        <FcGoogle />
+        <span className="text-[16px] font-light text-gray-600">
+          Continue with Google
+        </span>
+      </button>
+      <button className="flex flex-row items-center justify-between gap-x-3 rounded-full border-1 border-gray-200 px-4 py-2 cursor-pointer">
+        <FaFacebook className="text-blue-600" />
+        <span className="text-[16px] font-light text-gray-600">
+          Continue with Facebook
+        </span>
+      </button>
+      <button className="flex flex-row items-center justify-between gap-x-3 rounded-full border-1 border-gray-200 px-4 py-2 cursor-pointer">
+        <FaGithub />
+        <span className="text-[16px] font-light text-gray-600">
+          Continue with Github
+        </span>
+      </button>
+      </div>
+      
     </div>
   );
 };

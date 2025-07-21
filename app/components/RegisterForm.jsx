@@ -3,6 +3,9 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { FcGoogle } from "react-icons/fc";
+import { FaFacebook } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa6";
 
 const RegisterForm = () => {
   const [name, setName] = useState("");
@@ -38,9 +41,9 @@ const RegisterForm = () => {
   };
 
   return (
-    <div className="sticky container grid h-screen w-full place-items-center sm:w-screen">
-      <div className="place-items-center rounded-lg p-5 shadow-md shadow-blue-400">
-        <h1 className="text-2xl font-semibold text-gray-800">
+    <div className="sticky container flex h-screen w-full flex-col place-items-center items-center justify-center sm:w-screen lg:w-2/4">
+      <div className="place-items-center px-5">
+        <h1 className="text-2xl font-semibold text-gray-700">
           Enter your details
         </h1>
         <form
@@ -48,32 +51,32 @@ const RegisterForm = () => {
           className="mt-4 flex flex-col items-center justify-center gap-4"
         >
           <input
-            className="w-full sm:w-[400px] rounded-xl border-1 border-gray-200 bg-gray-50 px-6 py-2 text-[16px] text-gray-900 placeholder-gray-500"
+            className="w-full rounded-full border-1 border-gray-200 bg-gray-50 px-6 py-2 text-[16px] text-gray-900 placeholder-gray-500 sm:w-[400px]"
             onChange={(e) => setName(e.target.value)}
             type="text"
             placeholder="Name"
           />
           <input
-            className="w-full sm:w-[400px] rounded-xl border-1 border-gray-200 bg-gray-50 px-6 py-2 text-[16px] text-gray-900 placeholder-gray-500"
+            className="w-full rounded-full border-1 border-gray-200 bg-gray-50 px-6 py-2 text-[16px] text-gray-900 placeholder-gray-500 sm:w-[400px]"
             onChange={(e) => setEmail(e.target.value)}
             type="text"
             placeholder="Email"
           />
           <input
-            className="w-full sm:w-[400px] rounded-xl border-1 border-gray-200 bg-gray-50 px-6 py-2 text-[16px] text-gray-900 placeholder-gray-500"
+            className="w-full rounded-full border-1 border-gray-200 bg-gray-50 px-6 py-2 text-[16px] text-gray-900 placeholder-gray-500 sm:w-[400px]"
             onChange={(e) => setPassword(e.target.value)}
             type="password"
             placeholder="Password"
           />
-          <div className="flex w-full flex-row justify-between">
+          <div className="flex w-full flex-col justify-between">
             <button
-              className="h-8 w-1/4 cursor-pointer flex flex-row justify-center items-center rounded-xl bg-emerald-600 px-4 text-sm text-white hover:bg-emerald-500"
+              className="flex w-full cursor-pointer flex-row items-center justify-center rounded-full bg-emerald-600 px-4 py-2 text-sm text-white hover:bg-emerald-500"
               type="submit"
             >
               Register
             </button>
             <Link href="/login">
-              <div className="mt-2 flex flex-row gap-1 text-right text-sm text-gray-700">
+              <div className="mt-2 flex flex-row justify-center items-center gap-1 text-right text-sm text-gray-700">
                 Already have an account?{" "}
                 <span className="text-blue-400 hover:text-gray-500 hover:underline">
                   Login!
@@ -83,10 +86,32 @@ const RegisterForm = () => {
           </div>
         </form>
         {error && (
-          <div className="mt-4 w-fit rounded-md bg-red-500 px-3 py-1 text-sm text-white">
+          <div className="mt-4 w-fit rounded-sm bg-red-500 px-3 py-1 text-sm text-white animate-pulse">
             {error}
           </div>
         )}
+      </div>
+
+      <div className="flex flex-col py-4 text-lg">OR</div>
+      <div className="flex flex-col gap-y-4">
+        <button className="flex cursor-pointer flex-row items-center justify-between gap-x-3 rounded-full border-1 border-gray-200 px-4 py-2">
+          <FcGoogle />
+          <span className="text-[16px] font-light text-gray-600">
+            Continue with Google
+          </span>
+        </button>
+        <button className="flex cursor-pointer flex-row items-center justify-between gap-x-3 rounded-full border-1 border-gray-200 px-4 py-2">
+          <FaFacebook className="text-blue-600" />
+          <span className="text-[16px] font-light text-gray-600">
+            Continue with Facebook
+          </span>
+        </button>
+        <button className="flex cursor-pointer flex-row items-center justify-between gap-x-3 rounded-full border-1 border-gray-200 px-4 py-2">
+          <FaGithub />
+          <span className="text-[16px] font-light text-gray-600">
+            Continue with Github
+          </span>
+        </button>
       </div>
     </div>
   );
