@@ -78,7 +78,7 @@ const RegisterForm = () => {
             <Link href="/login">
               <div className="mt-2 flex flex-row justify-center items-center gap-1 text-right text-sm text-gray-700">
                 Already have an account?{" "}
-                <span className="text-blue-400 hover:text-gray-500 hover:underline">
+                <span className="text-blue-400 hover:underline">
                   Login!
                 </span>
               </div>
