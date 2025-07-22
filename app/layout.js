@@ -3,6 +3,7 @@ import RightBar from "./components/RightBar";
 import "./globals.css";
 import { AuthProvider } from "./Providers";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata = {
   title: "ReDILINK",
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
             <LeftBar />
             {children}
             <Analytics />
+            <SpeedInsights/>
             <RightBar />
           </div>
         </AuthProvider>
