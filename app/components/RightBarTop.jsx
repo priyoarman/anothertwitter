@@ -5,12 +5,14 @@ import { useState, useEffect } from "react";
 export default function News() {
   const [news, setNews] = useState([]);
   const [articleNum, setArticleNum] = useState(3);
-  const apiKey = process.env.NEXT_PUBLIC_NEWS_API
+  
   useEffect(() => {
-    fetch(`https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=${apiKey}`)
+    fetch("/api/news?country=us&category=business")
       .then((res) => res.json())
-      .then((data) => setNews(data.articles));
+      .then((data) => setNews(data.articles))
+      .catch(console.error);
   }, []);
+  
   return (
     <div className="flex flex-col space-y-3 rounded-xl border border-gray-200 bg-gray-50 pt-2 text-gray-800">
       <h4 className="px-4 pt-2 text-xl font-bold">Whats happening</h4>
