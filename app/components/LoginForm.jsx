@@ -27,16 +27,20 @@ const LoginForm = () => {
         setTimeout(() => setError(""), 3000);
         return;
       }
-      router.push("/profile");
+      if (!res.error) {
+        router.push("/profile");
+      }
     } catch (error) {
       console.log(error);
     }
   };
 
   return (
-    <div className="sticky container flex w-full flex-col place-items-center items-center justify-center h-screen pb-32 sm:pb-0 sm:w-screen lg:w-2/4">
+    <div className="sticky container flex h-screen w-full flex-col place-items-center items-center justify-center pb-32 sm:w-screen sm:pb-0 lg:w-2/4">
       <div className="place-items-center px-5">
-        <h1 className="flex flex-row justify-center items-center text-2xl font-semibold text-gray-700">Welcome Back!</h1>
+        <h1 className="flex flex-row items-center justify-center text-2xl font-semibold text-gray-700">
+          Welcome Back!
+        </h1>
         <form
           onSubmit={handleSubmit}
           className="mt-4 flex flex-col items-center justify-center gap-4"
@@ -53,12 +57,12 @@ const LoginForm = () => {
             type="password"
             placeholder="Password"
           />
-          <div className="flex w-full flex-col gap-y-2 justify-between">
+          <div className="flex w-full flex-col justify-between gap-y-2">
             <button className="w-full cursor-pointer rounded-full bg-blue-400 px-4 py-2 text-[16px] text-white hover:bg-blue-500">
               Login
             </button>
             <Link href="/register">
-              <div className="mt-2 gap-1 flex flex-row justify-center items-center text-sm text-gray-700 sm:flex sm:flex-row">
+              <div className="mt-2 flex flex-row items-center justify-center gap-1 text-sm text-gray-700 sm:flex sm:flex-row">
                 Don't have an account?{" "}
                 <span className="text-emerald-600 hover:text-emerald-500 hover:underline">
                   Register!
@@ -68,33 +72,32 @@ const LoginForm = () => {
           </div>
         </form>
         {error && (
-          <div className="mt-4 w-fit rounded-sm bg-red-500 px-3 py-1 text-sm text-white animate-pulse">
+          <div className="mt-4 w-fit animate-pulse rounded-sm bg-red-500 px-3 py-1 text-sm text-white">
             {error}
           </div>
         )}
       </div>
-      <div className="flex flex-col py-4 text-gray-700 text-lg">OR</div>
+      <div className="flex flex-col py-4 text-lg text-gray-700">OR</div>
       <div className="flex flex-col gap-y-4">
-        <button className="flex flex-row items-center justify-between gap-x-3 rounded-full border-1 border-gray-200 px-4 py-2 cursor-pointer">
-        <FcGoogle />
-        <span className="text-[16px] font-light text-gray-600">
-          Continue with Google
-        </span>
-      </button>
-      <button className="flex flex-row items-center justify-between gap-x-3 rounded-full border-1 border-gray-200 px-4 py-2 cursor-pointer">
-        <FaFacebook className="text-blue-600" />
-        <span className="text-[16px] font-light text-gray-600">
-          Continue with Facebook
-        </span>
-      </button>
-      <button className="flex flex-row items-center justify-between gap-x-3 rounded-full border-1 border-gray-200 px-4 py-2 cursor-pointer">
-        <FaGithub />
-        <span className="text-[16px] font-light text-gray-600">
-          Continue with Github
-        </span>
-      </button>
+        <button className="flex cursor-pointer flex-row items-center justify-between gap-x-3 rounded-full border-1 border-gray-200 px-4 py-2">
+          <FcGoogle />
+          <span className="text-[16px] font-light text-gray-600">
+            Continue with Google
+          </span>
+        </button>
+        <button className="flex cursor-pointer flex-row items-center justify-between gap-x-3 rounded-full border-1 border-gray-200 px-4 py-2">
+          <FaFacebook className="text-blue-600" />
+          <span className="text-[16px] font-light text-gray-600">
+            Continue with Facebook
+          </span>
+        </button>
+        <button className="flex cursor-pointer flex-row items-center justify-between gap-x-3 rounded-full border-1 border-gray-200 px-4 py-2">
+          <FaGithub />
+          <span className="text-[16px] font-light text-gray-600">
+            Continue with Github
+          </span>
+        </button>
       </div>
-      
     </div>
   );
 };
