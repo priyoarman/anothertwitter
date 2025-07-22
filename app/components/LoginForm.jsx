@@ -73,7 +73,7 @@ const LoginForm = () => {
           </div>
         )}
       </div>
-      <div className="flex flex-col py-4 text-lg">OR</div>
+      <div className="flex flex-col py-4 text-gray-700 text-lg">OR</div>
       <div className="flex flex-col gap-y-4">
         <button className="flex flex-row items-center justify-between gap-x-3 rounded-full border-1 border-gray-200 px-4 py-2 cursor-pointer">
         <FcGoogle />
