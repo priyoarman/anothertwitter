@@ -5,8 +5,9 @@ import { useState, useEffect } from "react";
 export default function News() {
   const [news, setNews] = useState([]);
   const [articleNum, setArticleNum] = useState(3);
+  const apiKey = process.env.NEXT_PUBLIC_NEWS_API
   useEffect(() => {
-    fetch(`https://saurav.tech/NewsAPI/everything/cnn.json`)
+    fetch(`https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=${apiKey}`)
       .then((res) => res.json())
       .then((data) => setNews(data.articles));
   }, []);
